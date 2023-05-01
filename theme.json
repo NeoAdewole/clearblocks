@@ -3,7 +3,43 @@
   "version": 2,
   "settings": {
     "appearanceTools": true,
-    "color": {},
+    "color": {
+      "text": false,
+			"background": true,
+			"link": false,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+      "palette": [
+        {
+          "slug": "white",
+          "color": "#EFEFE",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#1B1B1B",
+          "name": "Black"
+        },
+        {
+          "slug": "primary",
+          "color": "#D1D1E4",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#E4D1D1",
+          "name": "Secondary"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": null,
+			"wideSize": null
+    },
     "spacing": {
 			"padding": true,
 			"margin": true,
@@ -85,5 +121,27 @@
         }
       }
     }
-  }
+  },
+  "templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "comments",
+			"title": "Comments"
+		},
+		{
+			"area": "uncategorized",
+			"name": "post-meta",
+			"title": "Post Meta"
+		}
+	]
 }
