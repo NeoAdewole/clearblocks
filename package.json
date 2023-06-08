@@ -1,4 +1,10 @@
 {
+  "name": "clear-blocks-plugin",
+  "version": "0.1.0",
+  "description": "Clear blocks provides a boilerplate for custom blocks to extend website functions.",
+  "author": "Niyi Adewole",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
   "scripts": {
     "build": "wp-scripts build",
     "check-engines": "wp-scripts check-engines",
