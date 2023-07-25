@@ -407,7 +407,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"clearblocks/search-form","title":"Search Form","category":"widgets","icon":"search","description":"Adds a search form","keywords":["search form","clearblocks"],"version":"1","textdomain":"clearblocks","editorScript":"file:./index.js","attributes":{"bgColor":{"type":"string","default":"#f87171"},"textColor":{"type":"string","default":"#fff"}},"style":"file:./index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"clearblocks/search-form","title":"Search Form","category":"widgets","description":"Adds a search form","keywords":["search form","clearblocks"],"version":"1","textdomain":"clearblocks","editorScript":"file:./index.js","attributes":{"bgColor":{"type":"string","default":"#f87171"},"textColor":{"type":"string","default":"#fff"}},"style":"file:./index.css"}');
 
 /***/ })
 

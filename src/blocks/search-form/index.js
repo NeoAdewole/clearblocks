@@ -51,6 +51,6 @@ registerBlockType(block.name, {
 				</div>
 			</>
 		)
-	},
+	}
 
 })
