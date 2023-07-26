@@ -7,7 +7,8 @@ function clearblocks_register_blocks()
     ['name' => 'boilerplate'],
     ['name' => 'search-form', 'options' => [
       'render_callback' => 'clearblocks_search_form_render_cb'
-    ]]
+    ]],
+    ['name' => 'page-header', 'options' => ['render_callback' => 'clearblocks_page_header_render_cb']]
   ];
 
   foreach ($blocks as $block) {

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "clearblocks/page-header",
+  "title": "Page Header",
+  "category": "text",
+  "description": "Adds a page header",
+  "keywords": [
+    "Clear Blocks"
+  ],
+  "version": "1",
+  "textdomain": "clearblocks",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "showCategory": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "style": "file:./index.css"
+}
