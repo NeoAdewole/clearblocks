@@ -52,9 +52,9 @@ register_activation_hook(__FILE__, array('clearblocks', 'plugin_activation'));
 register_deactivation_hook(__FILE__, array('clearblocks', 'plugin_deactivation'));
 
 add_action('init', array('clearblocks', 'init'));
-// add_action('rest_api_init', array('clearblocks_REST_API', 'init'));
 // add_action('init', 'ccv_social_post_type');
 add_action('init', 'clearblocks_register_blocks');
+add_action('rest_api_init', 'ccb_rest_api');
 
 if (is_admin() || (defined('WP_CLI') && WP_CLI)) {
   require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-admin.php');
