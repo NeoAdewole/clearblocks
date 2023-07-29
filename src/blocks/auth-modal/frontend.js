@@ -44,8 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  signupForm.addEventListener('submit', e => {
+  signupForm.addEventListener('submit', async e => {
     e.preventDefault()
+    console.log('Begin submit event');
     const signupFieldset = signinForm.querySelector('fieldset')
 
     signupFieldset.setAttribute('disabled', true)
@@ -56,5 +57,38 @@ document.addEventListener('DOMContentLoaded', () => {
         Please wait!, we are creating your account.
       </div>
     `
+    const formData = {
+      username: signupForm.querySelector('#su-name').value,
+      email: signupForm.querySelector('#su-email').value,
+      password: signupForm.querySelector('#su-password').value
+    }
+
+    const response = await fetch(ccb_auth_rest.signup, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const responsejSON = await response.json()
+
+    if(responsejSON.status === 2){
+      console.log('Got responseJSON');
+      console.log(responsejSON);
+      signupStatus.innerHTML = `
+        <div class="modal-status modal-status-success">
+          Success! Your account has been created.
+        </div>
+      `
+      location.reload()
+    } else {
+      signupFieldset.removeAttribute('disabled')
+      signupStatus.innerHTML = `
+        <div class="modal-status modal-status-danger">
+          Unable to create account! Please try again later.
+        </div>
+      `
+    }
   })
 })

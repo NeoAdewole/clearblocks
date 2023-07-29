@@ -47,6 +47,12 @@ foreach ($allFiles as $filename) {
   include_once($filename);
 }
 
+if (is_admin() || (defined('WP_CLI') && WP_CLI)) {
+  require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-admin.php');
+  add_action('init', array('clearblocks_Admin', 'init'));
+}
+// require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-settings-validate.php');
+
 // Hooks
 register_activation_hook(__FILE__, array('clearblocks', 'plugin_activation'));
 register_deactivation_hook(__FILE__, array('clearblocks', 'plugin_deactivation'));
@@ -55,12 +61,7 @@ add_action('init', array('clearblocks', 'init'));
 // add_action('init', 'ccv_social_post_type');
 add_action('init', 'clearblocks_register_blocks');
 add_action('rest_api_init', 'ccb_rest_api');
-
-if (is_admin() || (defined('WP_CLI') && WP_CLI)) {
-  require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-admin.php');
-  add_action('init', array('clearblocks_Admin', 'init'));
-}
-// require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-settings-validate.php');
+add_action('wp_enqueue_scripts', 'ccb_enqueue_scripts');
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()
