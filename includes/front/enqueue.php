@@ -11,7 +11,8 @@ function clearblocks_enqueue()
 function ccb_enqueue_scripts()
 {
   $authURLs = json_encode([
-    'signup' => esc_url_raw(rest_url('ccb/v1/signup'))
+    'signup' => esc_url_raw(rest_url('ccb/v1/signup')),
+    'signin' => esc_url_raw(rest_url('ccb/v1/signin'))
   ]);
   wp_add_inline_script(
     'clearblocks-auth-modal-view-script',
