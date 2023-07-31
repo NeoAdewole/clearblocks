@@ -54,14 +54,19 @@ if (is_admin() || (defined('WP_CLI') && WP_CLI)) {
 // require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-settings-validate.php');
 
 // Hooks
-register_activation_hook(__FILE__, array('clearblocks', 'plugin_activation'));
-register_deactivation_hook(__FILE__, array('clearblocks', 'plugin_deactivation'));
+register_activation_hook(__FILE__, array('clearblocks', 'ccb_plugin_activation'));
+register_deactivation_hook(__FILE__, array('clearblocks', 'ccb_plugin_deactivation'));
 
 add_action('init', array('clearblocks', 'init'));
-// add_action('init', 'ccv_social_post_type');
 add_action('init', 'clearblocks_register_blocks');
 add_action('rest_api_init', 'ccb_rest_api');
 add_action('wp_enqueue_scripts', 'ccb_enqueue_scripts');
+add_action('init', 'ccb_social_post_type');
+add_action('channel_add_form_fields', 'ccb_channel_add_form_fields');
+add_action('create_channel', 'ccb_save_channel_meta');
+add_action('channel_edit_form_fields', 'ccb_channel_edit_form_fields');
+add_action('edited_channel', 'ccb_save_channel_meta');
+add_action('save_post_social', 'ccb_save_post_social');
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()

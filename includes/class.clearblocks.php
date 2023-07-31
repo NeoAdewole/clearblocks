@@ -97,10 +97,10 @@ class Clearblocks
    * Attached to activate_{ plugin_basename( __FILES__ ) } by register_activation_hook()
    * @static
    */
-  public static function plugin_activation()
+  public static function ccb_plugin_activation()
   {
     if (version_compare($GLOBALS['wp_version'], CLEARBLOCKS__MINIMUM_WP_VERSION, '<')) {
-      load_plugin_textdomain('clearblocks');
+      load_plugin_textdomain('cc-clearblocks');
 
       $message = '<strong>' . sprintf(
         esc_html__('Clearblocks %s requires WordPress %s or higher.', 'clearblocks'),
@@ -115,13 +115,16 @@ class Clearblocks
     } elseif (!empty($_SERVER['SCRIPT_NAME']) && false !== strpos($_SERVER['SCRIPT_NAME'], '/wp-admin/plugins.php')) {
       add_option('Activated_Clearblocks', true);
     }
+
+    ccb_social_post_type();
+    flush_rewrite_rules();
   }
 
   /**
    * Removes all connection options
    * @static
    */
-  public static function plugin_deactivation()
+  public static function ccb_plugin_deactivation()
   {
     // self::deactivate_key(self::get_api_key());
 

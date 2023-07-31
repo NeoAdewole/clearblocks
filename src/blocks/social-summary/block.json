@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "clearblocks/social-summary",
+  "title": "Social Summary",
+  "category": "text",
+  "description": "Adds a summary section for a social post",
+  "textdomain": "cc-clearblocks",
+  "attributes": {
+    "prepTime": {
+      "type": "string"
+    },
+    "cookTime": {
+      "type": "string"
+    },
+    "course": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css",
+  "usesContext": [
+    "postId"
+  ]
+}
