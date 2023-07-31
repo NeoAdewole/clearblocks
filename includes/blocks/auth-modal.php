@@ -2,6 +2,9 @@
 
 function clearblocks_auth_modal_render_cb($atts)
 {
+  if (is_user_logged_in()) {
+    return '';
+  }
   $showRegister = $atts['showRegister'];
   ob_start();
 ?>
