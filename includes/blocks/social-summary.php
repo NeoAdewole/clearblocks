@@ -23,6 +23,13 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
 
   $rating = get_post_meta($postID, 'social_rating', true);
 
+  global $wpdb;
+  $userID = get_current_user_id();
+  $ratingCount = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) FROM {$wpdb->prefix}social_ratings WHERE post_id=%d AND user_id=%d",
+    $postID,
+    $userID
+  ));
 
   ob_start();
 ?>
@@ -58,7 +65,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
         </div>
         <div class="social-metadata">
           <div class="social-title">
-            <?php _e('Cuisine', 'cc-clearblocks'); ?>
+            <?php _e('Channel', 'cc-clearblocks'); ?>
           </div>
           <div class="social-data social-channel">
             <?php echo $channels; ?>
@@ -70,7 +77,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
         <div class="social-title">
           <?php _e('Rating', 'cc-clearblocks'); ?>
         </div>
-        <div class="social-data" id="social-rating" data-post-id="<?php echo $postID; ?>" data-avg-rating="<?php echo $rating; ?>" data-logged-in="<?php echo is_user_logged_in(); ?>"></div>
+        <div class="social-data" id="social-rating" data-post-id="<?php echo $postID; ?>" data-avg-rating="<?php echo $rating; ?>" data-logged-in="<?php echo is_user_logged_in(); ?>" data-rating-count="<?php echo $ratingCount; ?>"></div>
         <i class="bi bi-hand-thumbs-up"></i>
       </div>
     </div>

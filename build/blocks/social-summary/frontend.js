@@ -12198,6 +12198,11 @@ __webpack_require__.r(__webpack_exports__);
 function SocialRating(props) {
   const [avgRating, setAvgRating] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(props.avgRating);
   const [permission, setPermission] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(props.loggedIn);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (props.ratingCount) {
+      setPermission(false);
+    }
+  });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mui_material_Rating_index_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     value: avgRating,
     precision: 0.5,
@@ -12206,8 +12211,7 @@ function SocialRating(props) {
         return alert('You have already rated this post or you may need to log in.');
       }
       setPermission(false);
-      await (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__.apiFetch)({
-        //  example.com/wp-json/ccb/v1/rate
+      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
         path: 'ccb/v1/rate',
         method: 'POST',
         data: {
@@ -12215,6 +12219,9 @@ function SocialRating(props) {
           rating
         }
       });
+      if (response.status == 2) {
+        setAvgRating(response.rating);
+      }
     }
   });
 }
@@ -12226,11 +12233,12 @@ document.addEventListener('DOMContentLoaded', event => {
   const avgRating = parseFloat(block.dataset.avgRating);
   const loggedIn = !!block.dataset.loggedIn;
   // The double negation operator !! converts a value into a boolean value
-
+  const ratingCount = !!parseInt(block.dataset.ratingCount);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SocialRating, {
     postID: postID,
     avgRating: avgRating,
-    loggedIn: loggedIn
+    loggedIn: loggedIn,
+    ratingCount: ratingCount
   }), block);
 });
 })();

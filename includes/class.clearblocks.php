@@ -120,7 +120,7 @@ class Clearblocks
     flush_rewrite_rules();
 
     global $wpdb;
-    $tableName = "{$wpdb->prefix}recipe_rating";
+    $tableName = "{$wpdb->prefix}social_ratings";
     $charsetCollate = $wpdb->get_charset_collate();
 
     $sql = "CREATE TABLE {$tableName} (
