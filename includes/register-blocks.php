@@ -11,7 +11,7 @@ function clearblocks_register_blocks()
     ['name' => 'page-header', 'options' => ['render_callback' => 'clearblocks_page_header_render_cb']],
     ['name' => 'header-tools', 'options' => ['render_callback' => 'clearblocks_header_tools_render_cb']],
     ['name' => 'auth-modal', 'options' => ['render_callback' => 'clearblocks_auth_modal_render_cb']],
-    ['name' => 'social-summary', 'options' => ['render_callback' => 'clearblocks_social_summary_cb']]
+    ['name' => 'social-summary', 'options' => ['render_callback' => 'clearblocks_social_summary_render_cb']]
   ];
 
   foreach ($blocks as $block) {
