@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { 
-  useBlockProps, InspectorControls, RichText
+  useBlockProps, InspectorControls, RichText, MediaPlaceholder
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { 
@@ -36,7 +36,16 @@ registerBlockType('clearblocks/team-member', {
         </InspectorControls>
         <div {...blockProps}>
           <div className="author-meta">
-            <img /> 
+            <img />
+            <MediaPlaceholder 
+              allowedTypes={['image']}
+              accept={'image/*'}
+              icon="admin-users"
+              onSelect={img => {
+                console.log(img)
+              }}
+              onError={error => console.error(error)}
+            /> 
             <p>
               <RichText 
                 placeholder={__('Name', 'cc-clearblocks')}
