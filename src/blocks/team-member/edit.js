@@ -2,7 +2,7 @@ import {
   useBlockProps, InspectorControls, RichText, MediaPlaceholder, BlockControls, MediaReplaceFlow
 } from '@wordpress/block-editor';
 import { 
-  PanelBody, TextareaControl, Spinner, ToolbarButton, Tooltip, Icon,
+  PanelBody, TextareaControl, Spinner, ToolbarButton, Tooltip, Icon, TextControl, Button,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
@@ -44,6 +44,12 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
   }
 
   const imageClass = `wp-image-${imgID} img-${context["clearblocks/image-shape"]}`;
+
+  const [activeSocialLink, setActiveSocialLink] = useState(null);
+
+  setAttributes({
+    imageShape: context["clearblocks/image-shape"]
+  })
 
   return (
     <>
@@ -130,7 +136,12 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
           {
             socialHandles.map( (handle, index) => {
               return (
-                <a href={handle.url} key={index}>
+                <a href={handle.url} key={index} onClick={(event) => {
+                  event.preventDefault();
+                  setActiveSocialLink(activeSocialLink === index ? null : index );
+                }}
+                className={activeSocialLink === index && isSelected ? "is-active" : ""}
+                >
                   <i className={`bi bi-${handle.icon}`}></i>
                 </a>
               )
@@ -147,6 +158,7 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
                     url: "",
                   }],
                 });
+                setActiveSocialLink(socialHandles.length);
               }}>
                 <Icon icon="plus" />
               </a>
@@ -154,6 +166,45 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
             </Tooltip>
           }
         </div>
+        {
+          isSelected && activeSocialLink !== null && (
+            <div className="team-member-social-edit-ctr">
+              <TextControl 
+                label={__('URL', 'cc-clearblocks')}
+                value={socialHandles[activeSocialLink].url}
+                onChange={url => {
+                  const tempLink = { ...socialHandles[activeSocialLink]};
+                  const tempSocial = [...socialHandles];
+                  tempLink.url = url;
+                  tempSocial[activeSocialLink] = tempLink;
+
+                  setAttributes({socialHandles: tempSocial});
+                }}
+              />
+              <TextControl 
+                label={__('Icon', 'cc-clearblocks')}
+                value={socialHandles[activeSocialLink].icon}
+                onChange={icon => {
+                  const tempLink = { ...socialHandles[activeSocialLink]};
+                  const tempSocial = [...socialHandles];
+                  tempLink.icon = icon;
+                  tempSocial[activeSocialLink] = tempLink;
+
+                  setAttributes({socialHandles: tempSocial});
+                }}
+              />
+              <Button isDestructive onClick={()=> {
+                const tempCopy = [...socialHandles];
+                tempCopy.splice(activeSocialLink, 1)
+
+                setAttributes({socialHandles: tempCopy});
+                setActiveSocialLink(null);
+              }}>
+                {__('Remove', 'cc-clearblocks')}
+              </Button>
+            </div>
+          )
+        }
       </div>
     </>
   );

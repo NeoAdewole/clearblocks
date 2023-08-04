@@ -69,6 +69,10 @@ __webpack_require__.r(__webpack_exports__);
     setImgPreview(url);
   };
   const imageClass = `wp-image-${imgID} img-${context["clearblocks/image-shape"]}`;
+  const [activeSocialLink, setActiveSocialLink] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  setAttributes({
+    imageShape: context["clearblocks/image-shape"]
+  });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
     group: "inline"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaReplaceFlow, {
@@ -140,7 +144,12 @@ __webpack_require__.r(__webpack_exports__);
   }, socialHandles.map((handle, index) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: handle.url,
-      key: index
+      key: index,
+      onClick: event => {
+        event.preventDefault();
+        setActiveSocialLink(activeSocialLink === index ? null : index);
+      },
+      className: activeSocialLink === index && isSelected ? "is-active" : ""
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: `bi bi-${handle.icon}`
     }));
@@ -156,10 +165,51 @@ __webpack_require__.r(__webpack_exports__);
           url: ""
         }]
       });
+      setActiveSocialLink(socialHandles.length);
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Icon, {
     icon: "plus"
-  }))))));
+  })))), isSelected && activeSocialLink !== null && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "team-member-social-edit-ctr"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('URL', 'cc-clearblocks'),
+    value: socialHandles[activeSocialLink].url,
+    onChange: url => {
+      const tempLink = {
+        ...socialHandles[activeSocialLink]
+      };
+      const tempSocial = [...socialHandles];
+      tempLink.url = url;
+      tempSocial[activeSocialLink] = tempLink;
+      setAttributes({
+        socialHandles: tempSocial
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon', 'cc-clearblocks'),
+    value: socialHandles[activeSocialLink].icon,
+    onChange: icon => {
+      const tempLink = {
+        ...socialHandles[activeSocialLink]
+      };
+      const tempSocial = [...socialHandles];
+      tempLink.icon = icon;
+      tempSocial[activeSocialLink] = tempLink;
+      setAttributes({
+        socialHandles: tempSocial
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    isDestructive: true,
+    onClick: () => {
+      const tempCopy = [...socialHandles];
+      tempCopy.splice(activeSocialLink, 1);
+      setAttributes({
+        socialHandles: tempCopy
+      });
+      setActiveSocialLink(null);
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Remove', 'cc-clearblocks')))));
 }
 
 /***/ }),
@@ -197,22 +247,34 @@ __webpack_require__.r(__webpack_exports__);
     imageShape
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
+  const imageClass = `wp-image-${imgID} img-${imageShape}`;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "author-meta"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    className: "author-meta"
+  }, imgURL && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: imgURL,
+    alt: imgAlt,
+    className: imageClass
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "strong",
     value: name
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "span",
     value: title
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "member-bio"
+    className: "member-bio"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     value: bio
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "social-links"
-  }));
+    className: "social-links"
+  }, socialHandles.map((handle, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: handle.url,
+      "data-icon": handle.icon
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `bi bi-${handle.icon}`
+    }));
+  })));
 }
 
 /***/ }),

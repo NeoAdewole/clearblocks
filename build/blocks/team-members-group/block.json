@@ -23,5 +23,30 @@
   "style": "file:./index.css",
   "providesContext": {
     "clearblocks/image-shape": "imageShape"
+  },
+  "example": {
+    "attributes": {
+      "columns": 2
+    },
+    "innerBlocks": [
+      {
+        "name": "clearblocks/team-member",
+        "attributes": {
+          "name": "John Doe",
+          "title": "Ceo of Clearblocks",
+          "bio": "This is a short descrition of the team member.",
+          "imgURL": "https://fastly.picsum.photos/id/149/100/100.jpg?hmac=4qM5iCwzt5mtTtEF9tkvPG_Qv0zRWxFxwEJYfcTL86Y"
+        }
+      },
+      {
+        "name": "clearblocks/team-member",
+        "attributes": {
+          "name": "Jane Doe",
+          "title": "Owner of Clearblocks",
+          "bio": "This is an example bio.",
+          "imgURL": "https://fastly.picsum.photos/id/149/100/100.jpg?hmac=4qM5iCwzt5mtTtEF9tkvPG_Qv0zRWxFxwEJYfcTL86Y"
+        }
+      }
+    ]
   }
 }
