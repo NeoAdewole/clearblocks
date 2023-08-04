@@ -2,13 +2,13 @@ import {
   useBlockProps, InspectorControls, RichText, MediaPlaceholder, BlockControls, MediaReplaceFlow
 } from '@wordpress/block-editor';
 import { 
-  PanelBody, TextareaControl, Spinner, ToolbarButton
+  PanelBody, TextareaControl, Spinner, ToolbarButton, Tooltip, Icon,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
 import { useState } from '@wordpress/element';
 
-export default function ({ attributes, setAttributes, context }) {
+export default function ({ attributes, setAttributes, context, isSelected }) {
   const { 
     name, title, bio, imgID, imgAlt, imgURL, socialHandles
   } = attributes;
@@ -126,7 +126,34 @@ export default function ({ attributes, setAttributes, context }) {
             value={bio}
           />
         </div>
-        <div className="social-links"></div>
+        <div className="social-links">
+          {
+            socialHandles.map( (handle, index) => {
+              return (
+                <a href={handle.url} key={index}>
+                  <i className={`bi bi-${handle.icon}`}></i>
+                </a>
+              )
+            })
+          }
+          {
+            isSelected &&
+            <Tooltip text={__('Add Social Media Handle', 'cc-clearblocks')}>
+              <a href='#' onClick={event => {
+                event.preventDefault()
+                setAttributes({
+                  socialHandles: [...socialHandles, {
+                    icon: "question",
+                    url: "",
+                  }],
+                });
+              }}>
+                <Icon icon="plus" />
+              </a>
+              
+            </Tooltip>
+          }
+        </div>
       </div>
     </>
   );

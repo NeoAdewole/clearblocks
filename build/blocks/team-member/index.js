@@ -31,7 +31,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__({
   attributes,
   setAttributes,
-  context
+  context,
+  isSelected
 }) {
   const {
     name,
@@ -136,7 +137,29 @@ __webpack_require__.r(__webpack_exports__);
     value: bio
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-links"
-  })));
+  }, socialHandles.map((handle, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: handle.url,
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `bi bi-${handle.icon}`
+    }));
+  }), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Social Media Handle', 'cc-clearblocks')
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    onClick: event => {
+      event.preventDefault();
+      setAttributes({
+        socialHandles: [...socialHandles, {
+          icon: "question",
+          url: ""
+        }]
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Icon, {
+    icon: "plus"
+  }))))));
 }
 
 /***/ }),
