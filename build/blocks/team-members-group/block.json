@@ -20,5 +20,8 @@
     }
   },
   "editorScript": "file:./index.js",
-  "style": "file:./index.css"
+  "style": "file:./index.css",
+  "providesContext": {
+    "clearblocks/image-shape": "imageShape"
+  }
 }

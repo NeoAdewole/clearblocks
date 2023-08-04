@@ -8,10 +8,11 @@ import { __ } from '@wordpress/i18n';
 import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
 import { useState } from '@wordpress/element';
 
-export default function ({ attributes, setAttributes }) {
+export default function ({ attributes, setAttributes, context }) {
   const { 
     name, title, bio, imgID, imgAlt, imgURL, socialHandles
   } = attributes;
+
   const blockProps = useBlockProps();
 
   const [imgPreview, setImgPreview] = useState(imgURL)
@@ -41,6 +42,8 @@ export default function ({ attributes, setAttributes }) {
 
     setImgPreview(url);
   }
+
+  const imageClass = `wp-image-${imgID} img-${context["clearblocks/image-shape"]}`;
 
   return (
     <>
@@ -89,7 +92,7 @@ export default function ({ attributes, setAttributes }) {
       </InspectorControls>
       <div {...blockProps}>
         <div className="author-meta">
-          { imgPreview && <img src={imgPreview} alt={imgAlt} /> }
+          { imgPreview && <img src={imgPreview} alt={imgAlt} className={imageClass}/> }
           { isBlobURL(imgPreview) && <Spinner /> }
           <MediaPlaceholder 
             allowedTypes={['image']}
