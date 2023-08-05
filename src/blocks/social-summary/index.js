@@ -32,7 +32,7 @@ registerBlockType('clearblocks/social-summary', {
         channels: getEntityRecords(...taxonomyArgs),
         isLoading: isResolving('getEntityRecords', taxonomyArgs)
       }
-    }, [termIDs])
+    }, [termIDs]);
 
     const { rating } = useSelect(select => {
       const { getCurrentPostAttribute } = select('core/editor')
@@ -40,9 +40,7 @@ registerBlockType('clearblocks/social-summary', {
       return {
         rating: getCurrentPostAttribute('meta').social_rating
       }
-    })
-
-    console.log(rating)
+    });
 
     return (
       <>

@@ -1,23 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
   "apiVersion": 2,
-  "name": "clearblocks/popular-recipes",
-  "title": "Popular Recipes",
+  "name": "clearblocks/daily-social",
+  "title": "Daily Social",
   "category": "text",
-  "description": "Adds a list of highly rated recipes",
+  "description": "Displays a random social post each day",
   "textdomain": "cc-clearblocks",
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Popular Recipes"
-    },
-    "count": {
-      "type": "number",
-      "default": 3
-    },
-    "cuisines": {
-      "type": "array",
-      "default": []
+      "default": "Social of the Day"
     }
   },
   "editorScript": "file:./index.js",

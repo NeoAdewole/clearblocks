@@ -43,8 +43,6 @@ registerBlockType('clearblocks/popular-socials', {
       [count, channelIDs]
     );
 
-    console.log(posts);
-
     return (
       <>
         <InspectorControls>
@@ -91,7 +89,7 @@ registerBlockType('clearblocks/popular-socials', {
                 post._embedded &&
                 post._embedded['wp:featuredmedia'] &&
                 post._embedded['wp:featuredmedia'].length >0 &&
-                post._embedded['wp_featuredmedia'][0];
+                post._embedded['wp:featuredmedia'][0];
 
               return (
               <div class="single-post">
