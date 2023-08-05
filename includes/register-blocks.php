@@ -13,7 +13,8 @@ function clearblocks_register_blocks()
     ['name' => 'auth-modal', 'options' => ['render_callback' => 'clearblocks_auth_modal_render_cb']],
     ['name' => 'social-summary', 'options' => ['render_callback' => 'clearblocks_social_summary_render_cb']],
     ['name' => 'team-members-group'],
-    ['name' => 'team-member']
+    ['name' => 'team-member'],
+    ['name' => 'popular-socials', 'options' => ['render_callback' => 'clearblocks_popular_socials_render_cb']],
   ];
 
   foreach ($blocks as $block) {
