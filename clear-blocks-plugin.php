@@ -69,6 +69,7 @@ add_action('edited_channel', 'ccb_save_channel_meta');
 add_action('save_post_social', 'ccb_save_post_social');
 add_action('after_setup_theme', 'clearblocks_setup_theme');
 add_filter('image_size_names_choose', 'clearblocks_custom_image_sizes');
+add_filter('rest_social_query', 'ccb_rest_social_query', 10, 2);
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()

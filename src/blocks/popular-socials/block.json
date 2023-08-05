@@ -15,7 +15,7 @@
       "type": "number",
       "default": 3
     },
-    "cuisines": {
+    "channels": {
       "type": "array",
       "default": []
     }
