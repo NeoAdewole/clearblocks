@@ -12227,8 +12227,6 @@ function SocialRating(props) {
 }
 document.addEventListener('DOMContentLoaded', event => {
   const block = document.querySelector('#social-rating');
-  // const postID = parseInt(block.dataset.postId)
-  // const avgRating = parseFloat(block.dataset.avgRating)
   const postID = parseInt(block.dataset.postId);
   const avgRating = parseFloat(block.dataset.avgRating);
   const loggedIn = !!block.dataset.loggedIn;
