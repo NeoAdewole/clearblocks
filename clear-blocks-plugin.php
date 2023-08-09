@@ -37,6 +37,7 @@ add_action('plugins_loaded', 'clearblocks_load_textdomain');
 define('CLEARBLOCKS_VERSION', '0.1.1');
 define('CLEARBLOCKS__MINIMUM_WP_VERSION', '6.2');
 define('CLEARBLOCKS__PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('CCB_PLUGIN_FILE', __FILE__);
 
 // Includes
 $rootFiles = glob(CLEARBLOCKS__PLUGIN_DIR . 'includes/*.php');
@@ -54,7 +55,7 @@ if (is_admin() || (defined('WP_CLI') && WP_CLI)) {
 // require_once(CLEARBLOCKS__PLUGIN_DIR . 'admin/class.clearblocks-settings-validate.php');
 
 // Hooks
-register_activation_hook(__FILE__, array('clearblocks', 'ccb_plugin_activation'));
+register_activation_hook(__FILE__, 'ccb_plugin_activation');
 register_deactivation_hook(__FILE__, array('clearblocks', 'ccb_plugin_deactivation'));
 
 add_action('init', array('clearblocks', 'init'));
@@ -70,6 +71,7 @@ add_action('save_post_social', 'ccb_save_post_social');
 add_action('after_setup_theme', 'clearblocks_setup_theme');
 add_filter('image_size_names_choose', 'clearblocks_custom_image_sizes');
 add_filter('rest_social_query', 'ccb_rest_social_query', 10, 2);
+add_action('admin_menu', 'ccb_admin_menus');
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()
