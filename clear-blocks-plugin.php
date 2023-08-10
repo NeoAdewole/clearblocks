@@ -72,6 +72,9 @@ add_action('after_setup_theme', 'clearblocks_setup_theme');
 add_filter('image_size_names_choose', 'clearblocks_custom_image_sizes');
 add_filter('rest_social_query', 'ccb_rest_social_query', 10, 2);
 add_action('admin_menu', 'ccb_admin_menus');
+add_action('admin_post_ccb_save_options', 'ccb_save_options');
+add_action('admin_enqueue_scripts', 'ccb_admin_enqueue');
+add_action('init','ccb_register_assets');
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()

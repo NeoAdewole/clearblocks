@@ -12187,10 +12187,8 @@ var __webpack_exports__ = {};
   \***********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_material_Rating_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/Rating/index.js */ "./node_modules/@mui/material/Rating/Rating.js");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -12211,7 +12209,7 @@ function SocialRating(props) {
         return alert('You have already rated this post or you may need to log in.');
       }
       setPermission(false);
-      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
+      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__({
         path: 'ccb/v1/rate',
         method: 'POST',
         data: {

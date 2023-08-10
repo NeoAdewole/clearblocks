@@ -44,7 +44,7 @@ function ccb_plugin_activation()
     if(!$options){
         add_option('clearblocks_options', [
             'og_title' => get_bloginfo('name'),
-            'og_image' => '',
+            'og_img' => '',
             'og_description' => get_bloginfo('description'),
             'enable_og' => 1
         ]);
