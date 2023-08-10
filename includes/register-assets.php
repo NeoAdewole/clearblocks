@@ -15,4 +15,14 @@ function ccb_register_assets(){
         $adminAssets['version'],
         true
     );
+
+    $editorAssets = include(CLEARBLOCKS__PLUGIN_DIR.'build/block-editor/index.asset.php');
+
+    wp_register_script(
+        'ccb_editor',
+        plugins_url('/build/block-editor/index.js', CCB_PLUGIN_FILE),
+        $editorAssets['dependencies'],
+        $editorAssets['version'],
+        true
+    );
 }
