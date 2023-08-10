@@ -72,4 +72,42 @@ function ccb_social_post_type()
     'default' => 0,
     'show_in_rest' => true
   ]);
+
+  register_post_meta('', 'og_title', [
+    'single' => true,
+    'type'   => 'string',
+    'show_in_rest' => true,
+    'sanitize_callback' => 'sanitize_text_field',
+    'auth_callback'  => function (){
+      return current_user_can('edit_posts');
+    }
+  ]);
+  register_post_meta('', 'og_description', [
+    'single' => true,
+    'type'   => 'string',
+    'show_in_rest' => true,
+    'sanitize_callback' => 'sanitize_text_field',
+    'auth_callback'  => function (){
+      return current_user_can('edit_posts');
+    }
+  ]);
+  register_post_meta('', 'og_image', [
+    'single' => true,
+    'type'   => 'string',
+    'show_in_rest' => true,
+    'sanitize_callback' => 'sanitize_text_field',
+    'auth_callback'  => function (){
+      return current_user_can('edit_posts');
+    }
+  ]);
+  register_post_meta('', 'og_override_image', [
+    'single' => true,
+    'type'   => 'boolean',
+    'default' => 'false',
+    'show_in_rest' => true,
+    'sanitize_callback' => 'sanitize_text_field',
+    'auth_callback'  => function (){
+      return current_user_can('edit_posts');
+    }
+  ]);
 }
