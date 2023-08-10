@@ -61,7 +61,7 @@ function ccb_plugin_options_page(){
               name="ccb_og_description"
               class="large-text"
               value="<?php echo esc_attr($options['og_description']); ?>"
-            ></textarea>
+            ><?php echo esc_attr($options['og_description']); ?></textarea>
             </td>
           </tr>
           <!-- Enable Open Graph -->
