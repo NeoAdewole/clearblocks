@@ -77,6 +77,7 @@ add_action('admin_enqueue_scripts', 'ccb_admin_enqueue');
 add_action('init','ccb_register_assets');
 add_action('admin_init', 'ccb_settings_api');
 add_action('enqueue_block_editor_assets', 'ccb_enqueue_block_editor_assets');
+add_action('wp_head', 'ccb_wp_head');
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()
