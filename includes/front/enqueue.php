@@ -19,4 +19,8 @@ function ccb_enqueue_scripts()
     "const ccb_auth_rest = {$authURLs}",
     'before'
   );
+
+  wp_enqueue_style(
+    'ccb_editor'
+  );
 }

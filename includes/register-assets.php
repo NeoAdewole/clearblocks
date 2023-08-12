@@ -25,4 +25,9 @@ function ccb_register_assets(){
         $editorAssets['version'],
         true
     );
+
+    wp_register_style(
+        'ccb_editor',
+        plugins_url('/build/block-editor/index.css', CCB_PLUGIN_FILE)
+    );
 }

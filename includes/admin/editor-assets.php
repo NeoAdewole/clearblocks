@@ -7,4 +7,5 @@ function ccb_enqueue_block_editor_assets(){
     }
 
     wp_enqueue_script('ccb_editor');
+    wp_enqueue_style('ccb_editor');
 }
