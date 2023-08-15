@@ -7,7 +7,7 @@
 function ccb_plugin_activation()
 {
   if (version_compare($GLOBALS['wp_version'], CLEARBLOCKS__MINIMUM_WP_VERSION, '<')) {
-    load_plugin_textdomain('cc-clearblocks');
+    load_plugin_textdomain('clearblocks');
 
     $message = '<strong>' . sprintf(
       esc_html__('Clearblocks %s requires WordPress %s or higher.', 'clearblocks'),

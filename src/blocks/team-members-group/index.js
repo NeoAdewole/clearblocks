@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { 
+import {
   useBlockProps, InspectorControls, InnerBlocks
 } from '@wordpress/block-editor';
 import {
@@ -18,32 +18,32 @@ registerBlockType('clearblocks/team-members-group', {
     const blockProps = useBlockProps({
       className: `cols-${columns}`
     });
-   
+
     return (
       <>
         <InspectorControls>
-          <PanelBody title={__('Settings', 'cc-clearblocks')}>
-            <RangeControl 
-              label={__('Columns', 'cc-clearblocks')}
-              onChange={columns => setAttributes({columns})}
+          <PanelBody title={__('Settings', 'clearblocks')}>
+            <RangeControl
+              label={__('Columns', 'clearblocks')}
+              onChange={columns => setAttributes({ columns })}
               value={columns}
               min={2}
               max={4}
             />
-            <SelectControl 
-              label={__('Image Shape', 'cc-clearblocks')}
-              value={ imageShape }
+            <SelectControl
+              label={__('Image Shape', 'clearblocks')}
+              value={imageShape}
               options={[
-                  { label: __('Hexagon', 'cc-clearblocks'), value: 'hexagon' },
-                  { label: __('Rabbet', 'cc-clearblocks'), value: 'rabbet' },
-                  { label: __('Pentagon', 'cc-clearblocks'), value: 'pentagon' },
+                { label: __('Hexagon', 'clearblocks'), value: 'hexagon' },
+                { label: __('Rabbet', 'clearblocks'), value: 'rabbet' },
+                { label: __('Pentagon', 'clearblocks'), value: 'pentagon' },
               ]}
               onChange={imageShape => setAttributes({ imageShape })}
             />
           </PanelBody>
         </InspectorControls>
         <div {...blockProps}>
-          <InnerBlocks 
+          <InnerBlocks
             orientation="horizontal"
             allowedBlocks={[
               'clearblocks/team-member'
@@ -60,14 +60,14 @@ registerBlockType('clearblocks/team-members-group', {
               ['clearblocks/team-member'],
               ['clearblocks/team-member']
             ]}
-            // templateLock="insert"
+          // templateLock="insert"
           />
         </div>
       </>
     );
   },
   save({ attributes }) {
-    const {columns} = attributes
+    const { columns } = attributes
     const blockProps = useBlockProps.save({
       className: `cols-${columns}`
     });

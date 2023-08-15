@@ -500,15 +500,15 @@ __webpack_require__.r(__webpack_exports__);
     } = attributes;
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'cc-clearblocks')
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'clearblocks')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Register?', 'cc-clearblocks'),
-      help: showRegister ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Showing registeration form', 'cc-clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hiding registeration form', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Register?', 'clearblocks'),
+      help: showRegister ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Showing registeration form', 'clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hiding registeration form', 'clearblocks'),
       checked: showRegister,
       onChange: showRegister => setAttributes({
         showRegister
       })
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('This block is not previewable from the editor. View your site for a live demo.', 'cc-clearblocks')));
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('This block is not previewable from the editor. View your site for a live demo.', 'clearblocks')));
   }
 });
 })();

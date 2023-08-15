@@ -11,46 +11,46 @@ registerBlockType('clearblocks/header-tools', {
     src: icons.primary
   },
   edit({ attributes, setAttributes }) {
-    const {showAuth} = attributes;
+    const { showAuth } = attributes;
     const blockProps = useBlockProps();
 
     return (
       <>
         <InspectorControls>
-          <PanelBody title={ __('General', 'cc-clearblocks') }>
-            <SelectControl 
-              label={__('Show Login/Register Link', 'cc-clearblocks')}
+          <PanelBody title={__('General', 'clearblocks')}>
+            <SelectControl
+              label={__('Show Login/Register Link', 'clearblocks')}
               value={showAuth}
               options={[
-                {label: __('No', 'cc-clearblocks'), value: false},
-                {label: __('Yes', 'cc-clearblocks'), value: true}
+                { label: __('No', 'clearblocks'), value: false },
+                { label: __('Yes', 'clearblocks'), value: true }
               ]}
-              onChange={newVal => setAttributes({showAuth: (newVal === "true")})}
+              onChange={newVal => setAttributes({ showAuth: (newVal === "true") })}
             />
-            <CheckboxControl 
-              label={__('Show Login/Register Link', 'cc-clearblocks')}
+            <CheckboxControl
+              label={__('Show Login/Register Link', 'clearblocks')}
               help={
-                showAuth?
-                __('Showing Link', 'cc-clearblocks') :
-                __('Hiding Link', 'cc-clearblocks') 
+                showAuth ?
+                  __('Showing Link', 'clearblocks') :
+                  __('Hiding Link', 'clearblocks')
               }
               checked={showAuth}
-              onChange={showAuth => setAttributes({showAuth})}
+              onChange={showAuth => setAttributes({ showAuth })}
             />
           </PanelBody>
         </InspectorControls>
-        <div { ...blockProps }>
+        <div {...blockProps}>
           {
-          showAuth && 
-          <a className="signin-link open-modal" href="#">
-            <div className="signin-icon">
-              <i className="bi bi-person-circle"></i>
-            </div>
-            <div className="signin-text">
-              <small>Hello, Sign in</small>
-              My Account
-            </div>
-          </a>            
+            showAuth &&
+            <a className="signin-link open-modal" href="#">
+              <div className="signin-icon">
+                <i className="bi bi-person-circle"></i>
+              </div>
+              <div className="signin-text">
+                <small>Hello, Sign in</small>
+                My Account
+              </div>
+            </a>
           }
         </div>
       </>

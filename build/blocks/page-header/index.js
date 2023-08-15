@@ -500,17 +500,17 @@ __webpack_require__.r(__webpack_exports__);
       showCategory
     } = attributes;
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'cc-clearblocks')
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'clearblocks')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Category', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Category', 'clearblocks'),
       checked: showCategory,
       onChange: showCategory => setAttributes({
         showCategory
       }),
-      help: showCategory ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Displaying Category', 'cc-clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Displaying Custom Header', 'cc-clearblocks')
+      help: showCategory ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Displaying Category', 'clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Displaying Custom Header', 'clearblocks')
     }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "inner-page-header"
-    }, showCategory ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Category: Some Category', 'cc-clearblocks')) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    }, showCategory ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Category: Some Category', 'clearblocks')) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
       tagName: "h1",
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Enter a custom header", "cc-clearblocks"),
       value: content,

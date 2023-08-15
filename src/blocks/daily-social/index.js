@@ -11,11 +11,11 @@ registerBlockType('clearblocks/daily-social', {
   icon: {
     src: icons.primary
   },
-	edit({ attributes, setAttributes }) {
+  edit({ attributes, setAttributes }) {
     const { title } = attributes;
     const blockProps = useBlockProps();
 
-    const [post, setPost ] = useState({
+    const [post, setPost] = useState({
       isLoading: true,
       url: null,
       image: null,
@@ -26,25 +26,25 @@ registerBlockType('clearblocks/daily-social', {
       const response = await apiFetch({
         path: "ccb/v1/daily-social",
       });
-      
+
       setPost({
         isLoading: false,
         ...response,
       });
     }, []);
-        
+
     return (
       <div {...blockProps}>
         <RichText
           tagName="h6"
-          value={ title } 
+          value={title}
           withoutInteractiveFormatting
-          onChange={ title => setAttributes({ title }) }
-          placeholder={ __('Title', 'cc-clearblocks') }
+          onChange={title => setAttributes({ title })}
+          placeholder={__('Title', 'clearblocks')}
         />
         {
           post.isLoading ? (<Spinner />) : (
-            <a href={ post.url }>
+            <a href={post.url}>
               <img src={post.img} />
               <h3>{post.title}</h3>
             </a>

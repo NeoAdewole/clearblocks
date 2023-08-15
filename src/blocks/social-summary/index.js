@@ -19,9 +19,9 @@ registerBlockType('clearblocks/social-summary', {
 
     const [termIDs] = useEntityProp('postType', 'social', 'channel', postId)
 
-    const { channels, isLoading } = useSelect((select)=> {
+    const { channels, isLoading } = useSelect((select) => {
       const { getEntityRecords, isResolving } = select('core')
-      
+
       const taxonomyArgs = [
         'taxonomy',
         'channel',
@@ -48,24 +48,24 @@ registerBlockType('clearblocks/social-summary', {
           <i className="bi bi-alarm"></i>
           <div className="social-columns-2">
             <div className="social-metadata">
-              <div className="social-title">{__('Prep Time', 'cc-clearblocks')}</div>
+              <div className="social-title">{__('Prep Time', 'clearblocks')}</div>
               <div className="social-data social-prep-time">
                 <RichText
                   tagName="span"
-                  value={ prepTime } 
-                  onChange={ prepTime => setAttributes({ prepTime }) }
-                  placeholder={ __('Prep time', 'cc-clearblocks') }
+                  value={prepTime}
+                  onChange={prepTime => setAttributes({ prepTime })}
+                  placeholder={__('Prep time', 'clearblocks')}
                 />
               </div>
             </div>
             <div className="social-metadata">
-              <div className="social-title">{__('Cook Time', 'cc-clearblocks')}</div>
+              <div className="social-title">{__('Cook Time', 'clearblocks')}</div>
               <div className="social-data social-cook-time">
                 <RichText
                   tagName="span"
-                  value={ cookTime } 
-                  onChange={ cookTime => setAttributes({ cookTime }) }
-                  placeholder={ __('Cook time', 'cc-clearblocks') }
+                  value={cookTime}
+                  onChange={cookTime => setAttributes({ cookTime })}
+                  placeholder={__('Cook time', 'clearblocks')}
                 />
               </div>
             </div>
@@ -73,18 +73,18 @@ registerBlockType('clearblocks/social-summary', {
           <div className="social-columns-2-alt">
             <div className="social-columns-2">
               <div className="social-metadata">
-                <div className="social-title">{__('Course', 'cc-clearblocks')}</div>
+                <div className="social-title">{__('Course', 'clearblocks')}</div>
                 <div className="social-data social-course">
                   <RichText
                     tagName="span"
-                    value={ course } 
-                    onChange={ course => setAttributes({ course }) }
-                    placeholder={ __('Course', 'cc-clearblocks') }
+                    value={course}
+                    onChange={course => setAttributes({ course })}
+                    placeholder={__('Course', 'clearblocks')}
                   />
                 </div>
               </div>
               <div className="social-metadata">
-                <div className="social-title">{__('Channel', 'cc-clearblocks')}</div>
+                <div className="social-title">{__('Channel', 'clearblocks')}</div>
                 <div className="social-data social-channel">
                   {
                     isLoading &&
@@ -107,9 +107,9 @@ registerBlockType('clearblocks/social-summary', {
               <i className="bi bi-egg-fried"></i>
             </div>
             <div className="social-metadata">
-              <div className="social-title">{__('Rating', 'cc-clearblocks')}</div>
+              <div className="social-title">{__('Rating', 'clearblocks')}</div>
               <div className="social-data">
-                <Rating 
+                <Rating
                   value={rating}
                   readOnly
                 />

@@ -503,9 +503,9 @@ __webpack_require__.r(__webpack_exports__);
       className: `cols-${columns}`
     });
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Settings', 'cc-clearblocks')
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Settings', 'clearblocks')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Columns', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Columns', 'clearblocks'),
       onChange: columns => setAttributes({
         columns
       }),
@@ -513,16 +513,16 @@ __webpack_require__.r(__webpack_exports__);
       min: 2,
       max: 4
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Image Shape', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Image Shape', 'clearblocks'),
       value: imageShape,
       options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hexagon', 'cc-clearblocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hexagon', 'clearblocks'),
         value: 'hexagon'
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Rabbet', 'cc-clearblocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Rabbet', 'clearblocks'),
         value: 'rabbet'
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Pentagon', 'cc-clearblocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Pentagon', 'clearblocks'),
         value: 'pentagon'
       }],
       onChange: imageShape => setAttributes({

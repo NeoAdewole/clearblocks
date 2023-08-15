@@ -38,7 +38,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
     <div class="social-columns-2">
       <div class="social-metadata">
         <div class="social-title">
-          <?php _e('Prep Time', 'cc-clearblocks'); ?>
+          <?php _e('Prep Time', 'clearblocks'); ?>
         </div>
         <div class="social-data social-prep-time">
           <?php echo $prepTime; ?>
@@ -46,7 +46,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
       </div>
       <div class="social-metadata">
         <div class="social-title">
-          <?php _e('Cook Time', 'cc-clearblocks'); ?>
+          <?php _e('Cook Time', 'clearblocks'); ?>
         </div>
         <div class="social-data social-cook-time">
           <?php echo $cookTime; ?>
@@ -57,7 +57,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
       <div class="social-columns-2">
         <div class="social-metadata">
           <div class="social-title">
-            <?php _e('Course', 'cc-clearblocks'); ?>
+            <?php _e('Course', 'clearblocks'); ?>
           </div>
           <div class="social-data social-course">
             <?php echo $course; ?>
@@ -65,7 +65,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
         </div>
         <div class="social-metadata">
           <div class="social-title">
-            <?php _e('Channel', 'cc-clearblocks'); ?>
+            <?php _e('Channel', 'clearblocks'); ?>
           </div>
           <div class="social-data social-channel">
             <?php echo $channels; ?>
@@ -75,7 +75,7 @@ function clearblocks_social_summary_render_cb($atts, $content, $block)
       </div>
       <div class="social-metadata">
         <div class="social-title">
-          <?php _e('Rating', 'cc-clearblocks'); ?>
+          <?php _e('Rating', 'clearblocks'); ?>
         </div>
         <div class="social-data" id="social-rating" data-post-id="<?php echo $postID; ?>" data-avg-rating="<?php echo $rating; ?>" data-logged-in="<?php echo is_user_logged_in(); ?>" data-rating-count="<?php echo $ratingCount; ?>"></div>
         <i class="bi bi-hand-thumbs-up"></i>

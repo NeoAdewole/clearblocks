@@ -9,13 +9,13 @@ function clearblocks_search_form_render_cb($atts)
 ?>
   <div class="wp-block-clearblocks-search-form" style="<?php echo $styleAttr ?>">
     <h1>
-      <?php esc_html_e('Search', 'cc-clearblocks'); ?>:
+      <?php esc_html_e('Search', 'clearblocks'); ?>:
       <?php the_search_query(); ?>
     </h1>
     <form action="<?php echo esc_url(home_url('/')); ?>">
-      <input type="text" placeholder="<?php esc_html_e('Search', 'cc-clearblocks'); ?>" name="s" value="<?php the_search_query(); ?>" />
+      <input type="text" placeholder="<?php esc_html_e('Search', 'clearblocks'); ?>" name="s" value="<?php the_search_query(); ?>" />
       <div class="btn-wrapper">
-        <button type="submit" style="<?php echo $styleAttr ?>"><?php esc_html_e('Search', 'cc-clearblocks'); ?></button>
+        <button type="submit" style="<?php echo $styleAttr ?>"><?php esc_html_e('Search', 'clearblocks'); ?></button>
       </div>
     </form>
   </div>

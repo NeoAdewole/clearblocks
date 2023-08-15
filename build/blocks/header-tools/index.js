@@ -500,23 +500,23 @@ __webpack_require__.r(__webpack_exports__);
     } = attributes;
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'cc-clearblocks')
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('General', 'clearblocks')
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Login/Register Link', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Login/Register Link', 'clearblocks'),
       value: showAuth,
       options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('No', 'cc-clearblocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('No', 'clearblocks'),
         value: false
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Yes', 'cc-clearblocks'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Yes', 'clearblocks'),
         value: true
       }],
       onChange: newVal => setAttributes({
         showAuth: newVal === "true"
       })
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CheckboxControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Login/Register Link', 'cc-clearblocks'),
-      help: showAuth ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Showing Link', 'cc-clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hiding Link', 'cc-clearblocks'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Show Login/Register Link', 'clearblocks'),
+      help: showAuth ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Showing Link', 'clearblocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hiding Link', 'clearblocks'),
       checked: showAuth,
       onChange: showAuth => setAttributes({
         showAuth

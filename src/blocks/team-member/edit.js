@@ -1,7 +1,7 @@
-import { 
+import {
   useBlockProps, InspectorControls, RichText, MediaPlaceholder, BlockControls, MediaReplaceFlow
 } from '@wordpress/block-editor';
-import { 
+import {
   PanelBody, TextareaControl, Spinner, ToolbarButton, Tooltip, Icon, TextControl, Button,
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
@@ -9,7 +9,7 @@ import { isBlobURL, revokeBlobURL } from '@wordpress/blob';
 import { useState } from '@wordpress/element';
 
 export default function ({ attributes, setAttributes, context, isSelected }) {
-  const { 
+  const {
     name, title, bio, imgID, imgAlt, imgURL, socialHandles
   } = attributes;
 
@@ -19,7 +19,7 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
 
   const selectImg = (img) => {
     let newImgURL = null
-    if (isBlobURL(img.url)){
+    if (isBlobURL(img.url)) {
       newImgURL = img.url
     } else {
       newImgURL = img.sizes ? img.sizes.teamMember.url : img.media_details.sizes.teamMember.source_url
@@ -55,8 +55,8 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
     <>
       {imgPreview && (
         <BlockControls group="inline">
-          <MediaReplaceFlow 
-            name= {__('Replace Image', 'cc-clearblocks')}
+          <MediaReplaceFlow
+            name={__('Replace Image', 'clearblocks')}
             mediaId={imgID}
             mediaURL={imgURL}
             allowedTypes={['image']}
@@ -65,8 +65,8 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
             onSelect={selectImg}
             onSelectURL={selectImgUrl}
           />
-          <ToolbarButton 
-            onClick={()=> {
+          <ToolbarButton
+            onClick={() => {
               setAttributes({
                 imgID: 0,
                 imgAlt: "",
@@ -76,21 +76,21 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
               setImgPreview("");
             }}
           >
-            {__('Remove Image', 'cc-clearblocks')}
+            {__('Remove Image', 'clearblocks')}
           </ToolbarButton>
         </BlockControls>
       )}
       <InspectorControls>
-        <PanelBody title={__('Settings', 'cc-clearblocks')}>
+        <PanelBody title={__('Settings', 'clearblocks')}>
           {
             imgPreview && !isBlobURL(imgPreview) &&
-            <TextareaControl 
-              label={__('Alt Attribute', 'cc-clearblocks')}
+            <TextareaControl
+              label={__('Alt Attribute', 'clearblocks')}
               value={imgAlt}
-              onChange={imgAlt => setAttributes({imgAlt})}
+              onChange={imgAlt => setAttributes({ imgAlt })}
               help={__(
                 'Description of your image for screen readers.',
-                'cc-clearblocks'
+                'clearblocks'
               )}
             />
           }
@@ -98,9 +98,9 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
       </InspectorControls>
       <div {...blockProps}>
         <div className="author-meta">
-          { imgPreview && <img src={imgPreview} alt={imgAlt} className={imageClass}/> }
-          { isBlobURL(imgPreview) && <Spinner /> }
-          <MediaPlaceholder 
+          {imgPreview && <img src={imgPreview} alt={imgAlt} className={imageClass} />}
+          {isBlobURL(imgPreview) && <Spinner />}
+          <MediaPlaceholder
             allowedTypes={['image']}
             accept={'image/*'}
             icon="admin-users"
@@ -108,39 +108,39 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
             onError={error => console.error(error)}
             disableMediaButtons={imgPreview}
             onSelectURL={selectImgUrl}
-          /> 
+          />
           <p>
-            <RichText 
-              placeholder={__('Name', 'cc-clearblocks')}
+            <RichText
+              placeholder={__('Name', 'clearblocks')}
               tagName="strong"
-              onChange={name => setAttributes({name})}
+              onChange={name => setAttributes({ name })}
               value={name}
             />
-            <RichText 
-              placeholder={__('Title', 'cc-clearblocks')}
+            <RichText
+              placeholder={__('Title', 'clearblocks')}
               tagName="span"
-              onChange={title => setAttributes({title})}
+              onChange={title => setAttributes({ title })}
               value={title}
             />
           </p>
         </div>
         <div className="member-bio">
-          <RichText 
-            placeholder={__('Member bio', 'cc-clearblocks')}
+          <RichText
+            placeholder={__('Member bio', 'clearblocks')}
             tagName="p"
-            onChange={bio => setAttributes({bio})}
+            onChange={bio => setAttributes({ bio })}
             value={bio}
           />
         </div>
         <div className="social-links">
           {
-            socialHandles.map( (handle, index) => {
+            socialHandles.map((handle, index) => {
               return (
                 <a href={handle.url} key={index} onClick={(event) => {
                   event.preventDefault();
-                  setActiveSocialLink(activeSocialLink === index ? null : index );
+                  setActiveSocialLink(activeSocialLink === index ? null : index);
                 }}
-                className={activeSocialLink === index && isSelected ? "is-active" : ""}
+                  className={activeSocialLink === index && isSelected ? "is-active" : ""}
                 >
                   <i className={`bi bi-${handle.icon}`}></i>
                 </a>
@@ -149,7 +149,7 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
           }
           {
             isSelected &&
-            <Tooltip text={__('Add Social Media Handle', 'cc-clearblocks')}>
+            <Tooltip text={__('Add Social Media Handle', 'clearblocks')}>
               <a href='#' onClick={event => {
                 event.preventDefault()
                 setAttributes({
@@ -162,45 +162,45 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
               }}>
                 <Icon icon="plus" />
               </a>
-              
+
             </Tooltip>
           }
         </div>
         {
           isSelected && activeSocialLink !== null && (
             <div className="team-member-social-edit-ctr">
-              <TextControl 
-                label={__('URL', 'cc-clearblocks')}
+              <TextControl
+                label={__('URL', 'clearblocks')}
                 value={socialHandles[activeSocialLink].url}
                 onChange={url => {
-                  const tempLink = { ...socialHandles[activeSocialLink]};
+                  const tempLink = { ...socialHandles[activeSocialLink] };
                   const tempSocial = [...socialHandles];
                   tempLink.url = url;
                   tempSocial[activeSocialLink] = tempLink;
 
-                  setAttributes({socialHandles: tempSocial});
+                  setAttributes({ socialHandles: tempSocial });
                 }}
               />
-              <TextControl 
-                label={__('Icon', 'cc-clearblocks')}
+              <TextControl
+                label={__('Icon', 'clearblocks')}
                 value={socialHandles[activeSocialLink].icon}
                 onChange={icon => {
-                  const tempLink = { ...socialHandles[activeSocialLink]};
+                  const tempLink = { ...socialHandles[activeSocialLink] };
                   const tempSocial = [...socialHandles];
                   tempLink.icon = icon;
                   tempSocial[activeSocialLink] = tempLink;
 
-                  setAttributes({socialHandles: tempSocial});
+                  setAttributes({ socialHandles: tempSocial });
                 }}
               />
-              <Button isDestructive onClick={()=> {
+              <Button isDestructive onClick={() => {
                 const tempCopy = [...socialHandles];
                 tempCopy.splice(activeSocialLink, 1)
 
-                setAttributes({socialHandles: tempCopy});
+                setAttributes({ socialHandles: tempCopy });
                 setActiveSocialLink(null);
               }}>
-                {__('Remove', 'cc-clearblocks')}
+                {__('Remove', 'clearblocks')}
               </Button>
             </div>
           )
