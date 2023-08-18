@@ -1,7 +1,5 @@
 <?php
 
-use function FakerPress\register;
-
 function ccb_social_post_type()
 {
   $labels = array(

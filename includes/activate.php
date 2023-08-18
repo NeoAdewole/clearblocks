@@ -9,13 +9,19 @@ function ccb_plugin_activation()
   if (version_compare($GLOBALS['wp_version'], CLEARBLOCKS__MINIMUM_WP_VERSION, '<')) {
     load_plugin_textdomain('clearblocks');
 
-    $message = '<strong>' . sprintf(
-      esc_html__('Clearblocks %s requires WordPress %s or higher.', 'clearblocks'),
-      CLEARBLOCKS_VERSION,
-      CLEARBLOCKS__MINIMUM_WP_VERSION
-    ) . '</strong> ' . sprintf(
-      __('Please <a href="%s">upgrade WordPress</a> to a current version to use this plugin.', 'clearblocks'),
-      'https://codex.wordpress.org/Upgrading_WordPress'
+    $message = '<strong>' . esc_html__(
+      sprintf(
+        'Clearblocks %1$f! requires WordPress %2$f or higher.',
+        CLEARBLOCKS_VERSION,
+        CLEARBLOCKS__MINIMUM_WP_VERSION
+      ),
+      'clearblocks'
+    ) . '</strong> ' . __(
+      sprintf(
+        "Please <a href='%s'>upgrade WordPress</a> to a current version to use this plugin.",
+        "https://codex.wordpress.org/Upgrading_WordPress"
+      ),
+      "clearblocks"
     );
 
     clearblocks::ccb_bail_on_activation($message);

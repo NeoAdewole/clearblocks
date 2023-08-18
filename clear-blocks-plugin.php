@@ -24,13 +24,6 @@ if (!function_exists('add_action')) {
   exit;
 }
 
-// load text domain
-function clearblocks_load_textdomain()
-{
-  load_plugin_textdomain('clearblocks', false, plugin_dir_path(__FILE__) . 'languages/');
-}
-add_action('plugins_loaded', 'clearblocks_load_textdomain');
-
 // setup
 
 // Variables
@@ -78,7 +71,8 @@ add_action('init', 'ccb_register_assets');
 add_action('admin_init', 'ccb_settings_api');
 add_action('enqueue_block_editor_assets', 'ccb_enqueue_block_editor_assets');
 add_action('wp_head', 'ccb_wp_head');
-add_action('init', 'ccb_load_php_translations');
+add_action('plugins_loaded', 'ccb_load_php_translations');
+add_action('wp_enqueue_scripts', 'ccb_load_block_translations', 100);
 
 // default plugin options. these are used until the user makes edits
 function clearblocks_options_default()

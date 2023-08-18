@@ -63,7 +63,7 @@ class Clearblocks_Admin
       }
     }
 
-    load_plugin_textdomain('clearblocks');
+    // load_plugin_textdomain('clearblocks', false, dirname(plugin_basename(__FILE__)) . '/languages');
   }
 
   public static function admin_menu()

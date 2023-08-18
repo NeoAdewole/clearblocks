@@ -5,7 +5,7 @@
   "title": "Social Summary",
   "category": "text",
   "description": "Adds a summary section for a social post",
-  "textdomain": "cc-clearblocks",
+  "textdomain": "clearblocks",
   "attributes": {
     "prepTime": {
       "type": "string"

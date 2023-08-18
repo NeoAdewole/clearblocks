@@ -68,7 +68,7 @@ class Clearblocks_Menu
             'content'  =>
             '<p><strong>' . esc_html__('Clearblocks Setup', 'clearblocks') . '</strong></p>' .
               '<p>' . esc_html__('You need to enter an API key to activate the Clearblocks service on your site.', 'clearblocks') . '</p>' .
-              '<p>' . sprintf(__('Sign up for an account on %s to get an API Key.', 'clearblocks'), '<a href="https://clearblocks.com/plugin-signup/" target="_blank">Clearblocks.com</a>') . '</p>',
+              '<p>' . __(sprintf("Sign up for an account on %s to get an API Key.", "<a href='https://clearblocks.com/plugin-signup/' target='_blank'>Clearblocks.com</a>"), "clearblocks") . "</p>",
           )
         );
 

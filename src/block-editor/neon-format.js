@@ -9,9 +9,10 @@ registerFormatType("clearblocks/neon", {
   tagName: "span",
   className: 'neon',
   edit({ isActive, onChange, value }) {
-    const selectedBlock = useSelect(select => select('core/block-editir').getSelectedBlock());
+    const selectedBlock = useSelect(select => select('core/block-editor').getSelectedBlock());
     return (
       <>
+        {console.log(selectedBlock)}
         {selectedBlock?.name === "core/paragraph" &&
           <RichTextToolbarButton
             title={__("Neon", "cc-clearblocks")}

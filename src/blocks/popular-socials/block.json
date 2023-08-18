@@ -5,7 +5,7 @@
   "title": "Popular Socials",
   "category": "text",
   "description": "Adds a list of highly rated socials",
-  "textdomain": "cc-clearblocks",
+  "textdomain": "clearblocks",
   "attributes": {
     "title": {
       "type": "string",
