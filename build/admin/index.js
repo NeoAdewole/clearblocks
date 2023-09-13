@@ -78,8 +78,9 @@ ogImgBtn.addEventListener('click', event => {
 });
 mediaFrame.on("select", () => {
   const attachment = mediaFrame.state().get("selection").first().toJSON();
-  ogImgCtr.src = attachment.sizes.openGraph.url;
-  ogImgInput.value = attachment.sizes.openGraph.url;
+  const imageSize = attachment.sizes.openGraph ? attachment.sizes.openGraph : attachment.sizes.thumbnail;
+  ogImgCtr.src = imageSize.url;
+  ogImgInput.value = imageSize.url;
 });
 })();
 
