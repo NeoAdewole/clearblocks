@@ -55,5 +55,8 @@ function ccb_plugin_activation()
       'og_description' => get_bloginfo('description'),
       'enable_og' => 1
     ]);
+    add_option('clearblocks_secondary_menu', [
+      'ccb_enable_secondary_menu' => false
+    ]);
   }
 }

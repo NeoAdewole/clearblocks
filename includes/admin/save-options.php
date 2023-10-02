@@ -20,3 +20,22 @@ function ccb_save_options()
 
   wp_redirect(admin_url('admin.php?page=clearblocks-plugin-options&status=1'));
 }
+
+
+function ccb_save_settings()
+{
+  if (!current_user_can('edit_theme_options')) {
+    wp_die(
+      __("You are not allowed to be on this page", 'clearblocks')
+    );
+  }
+
+  check_admin_referer('ccb_settings_verify');
+  $options = get_option('clearblocks_settings');
+
+  $options['enable_secondary_menu'] = sanitize_text_field($_POST['ccb_enable_secondary_menu']);
+
+  update_option('clearblocks_settings', $options);
+
+  wp_redirect(admin_url('admin.php?page=clearblocks-plugin-settings&status=1'));
+}

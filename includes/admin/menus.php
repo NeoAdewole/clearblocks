@@ -12,10 +12,10 @@ function ccb_admin_menus()
 
   add_submenu_page(
     'clearblocks-plugin-options',
-    __('Alt Clearblocks', 'clearblocks'),
-    __('Alt Clearblocks', 'clearblocks'),
+    __('Clearblocks Settings', 'clearblocks'),
+    __('Clearblocks Settings', 'clearblocks'),
     'edit_theme_options',
-    'clearblocks-plugin-options-alt',
-    'ccb_plugin_options_page_alt'
+    'clearblocks-plugin-settings',
+    'ccb_plugin_settings_page'
   );
 }

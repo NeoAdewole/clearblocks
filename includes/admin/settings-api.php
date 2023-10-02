@@ -39,6 +39,23 @@ function ccb_settings_api()
     'clearblocks-options-page',
     'ccb_options_section'
   );
+
+  register_setting('ccb_settings_group', 'clearblocks_settings');
+
+  add_settings_section(
+    'ccb_settings_section',
+    __('Clearblocks Plugin Settings', 'clearblocks'),
+    'ccb_settings_section_cb',
+    'clearblocks-settings-page'
+  );
+
+  add_settings_field(
+    'ccb_enable_secondary_menu',
+    __('Enable Clearblocks Menu', 'clearblocks'),
+    'ccb_enable_secondary_menu_cb',
+    'clearblocks-settings-page',
+    'ccb_settings_section'
+  );
 }
 
 function og_title_input_cb()
@@ -80,7 +97,19 @@ function og_enable_input_cb()
 <?php
 }
 
-function ccb_options_section_cb()
+function ccb_settings_section_cb()
 {
-?><p>An alternative form for updating options with the settings API.</p><?php
-                                                                          }
+?>
+  <p>Update the Clearblocks settings here.</p>
+<?php
+}
+function ccb_enable_secondary_menu_cb()
+{
+  $settings = get_option('clearblocks_settings');
+?>
+  <label for="ccb_enable_secondary_menu">
+    <input name="clearblocks_settings[enable_secondary_menu]" type="checkbox" id="ccb_enable_secondary_menu" value="1" <?php checked('1', $settings['enable_secondary_menu']); ?> />
+    <span>Enable</span>
+  </label>
+<?php
+}

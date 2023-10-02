@@ -5,7 +5,7 @@ function ccb_plugin_options_page()
   $options = get_option('clearblocks_options');
 ?>
   <div class="wrap">
-    <h1><?php esc_html_e('Clearblocks Settings', 'clearblocks'); ?></h1>
+    <h1><?php esc_html_e('Configure OpenGraph Settings', 'clearblocks'); ?></h1>
     <?php
     if (isset($_GET['status']) && $_GET['status'] == '1') {
     ?>
@@ -66,6 +66,46 @@ function ccb_plugin_options_page()
               <label for="ccb_enable_og">
                 <input name="ccb_enable_og" type="checkbox" id="ccb_enable_og" value="1" <?php checked('1', $options['enable_og']); ?> />
                 <span>Enable</span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <?php submit_button(); ?>
+    </form>
+  </div>
+<?php
+}
+
+function ccb_plugin_settings_page_alt()
+{
+  $settings = get_option('clearblocks_settings');
+?>
+  <div class="wrap">
+    <h1><?php esc_html_e('Clearblocks Plugin Settings', 'clearblocks'); ?></h1>
+    <?php
+    if (isset($_GET['status']) && $_GET['status'] == '1') {
+    ?>
+      <div class="notice notice-success inline">
+        <p><?php esc_html_e('Settings updated successfully', 'clearblocks') ?></p>
+      </div>
+    <?php
+    }
+    ?>
+    <form novalidate="novalidate" method='POST' action='admin-post.php'>
+      <input type='hidden' name='action' value='ccb_save_settings' />
+      <?php wp_nonce_field('ccb_settings_verify'); ?>
+      <table class="form-table">
+        <tbody>
+          <!-- Enable secondary menu -->
+          <tr>
+            <th>
+              <?php esc_html_e('Secondary Menu', 'clearblocks'); ?>
+            </th>
+            <td>
+              <label for="ccb_enable_secondary_menu">
+                <input name="ccb_enable_secondary_menu" type="checkbox" id="ccb_enable_secondary_menu" value="1" <?php checked('1', $settings['enable_secondary_menu']); ?> />
+                <span>Enable Secondary Menu</span>
               </label>
             </td>
           </tr>
