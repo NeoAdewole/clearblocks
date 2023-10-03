@@ -46,9 +46,9 @@ register_activation_hook(__FILE__, array('clearblocks', 'ccb_plugin_activation')
 register_deactivation_hook(__FILE__, array('clearblocks', 'ccb_plugin_deactivation'));
 
 add_action('init', array('clearblocks', 'init'));
-add_action('init', 'clearblocks_register_blocks');
 add_action('init', 'ccb_register_assets');
 add_action('init', 'ccb_social_post_type');
+add_action('init', 'clearblocks_register_blocks');
 add_action('rest_api_init', 'ccb_rest_api');
 add_action('channel_add_form_fields', 'ccb_channel_add_form_fields');
 add_action('create_channel', 'ccb_save_channel_meta');

@@ -8276,10 +8276,10 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./src/blocks/social-summary/main.css":
-/*!********************************************!*\
-  !*** ./src/blocks/social-summary/main.css ***!
-  \********************************************/
+/***/ "./src/blocks/social-summary/main.scss":
+/*!*********************************************!*\
+  !*** ./src/blocks/social-summary/main.scss ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12610,7 +12610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _mui_material_Rating_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/Rating/index.js */ "./node_modules/@mui/material/Rating/Rating.js");
 /* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main.css */ "./src/blocks/social-summary/main.css");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main.scss */ "./src/blocks/social-summary/main.scss");
 
 
 

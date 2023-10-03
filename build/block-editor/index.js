@@ -2,6 +2,18 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/bootstrap-icons/font/bootstrap-icons.css":
+/*!***************************************************************!*\
+  !*** ./node_modules/bootstrap-icons/font/bootstrap-icons.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/block-editor/neon.css":
 /*!***********************************!*\
   !*** ./src/block-editor/neon.css ***!
@@ -91,6 +103,17 @@ module.exports = window["wp"]["plugins"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["richText"];
+
+/***/ }),
+
+/***/ "./src/block-editor/fonts.js":
+/*!***********************************!*\
+  !*** ./src/block-editor/fonts.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// import 'bootstrap-icons/bootstrap-icons.svg';
 
 /***/ }),
 
@@ -274,8 +297,12 @@ var __webpack_exports__ = {};
   !*** ./src/block-editor/index.js ***!
   \***********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sidebar.js */ "./src/block-editor/sidebar.js");
-/* harmony import */ var _neon_format_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neon-format.js */ "./src/block-editor/neon-format.js");
+/* harmony import */ var _fonts_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fonts.js */ "./src/block-editor/fonts.js");
+/* harmony import */ var bootstrap_icons_font_bootstrap_icons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap-icons/font/bootstrap-icons.css */ "./node_modules/bootstrap-icons/font/bootstrap-icons.css");
+/* harmony import */ var _sidebar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar.js */ "./src/block-editor/sidebar.js");
+/* harmony import */ var _neon_format_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neon-format.js */ "./src/block-editor/neon-format.js");
+
+
 
 
 })();

@@ -6,7 +6,7 @@ import { useSelect } from '@wordpress/data';
 import { Spinner } from '@wordpress/components';
 import Rating from '@mui/material/Rating/index.js';
 import icons from '../../icons.js';
-import './main.css';
+import './main.scss';
 
 registerBlockType('clearblocks/social-summary', {
   icon: {

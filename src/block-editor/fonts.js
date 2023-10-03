@@ -1,1 +1,1 @@
-import 'bootstrap-icons/bootstrap-icons.svg';
+// import 'bootstrap-icons/bootstrap-icons.svg';
