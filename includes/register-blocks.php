@@ -16,6 +16,7 @@ function clearblocks_register_blocks()
     ['name' => 'team-member'],
     ['name' => 'popular-socials', 'options' => ['render_callback' => 'clearblocks_popular_socials_render_cb']],
     ['name' => 'daily-social', 'options' => ['render_callback' => 'clearblocks_daily_social_render_cb']],
+    ['name' => 'hero']
   ];
 
   foreach ($blocks as $block) {
