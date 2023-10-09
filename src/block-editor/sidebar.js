@@ -5,12 +5,13 @@ import { useSelect, useDispatch } from "@wordpress/data";
 import { PanelBody, TextControl, TextareaControl, ToggleControl, Button } from "@wordpress/components";
 import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 
-const { select } = wp.data;
-
 registerPlugin("ccb-sidebar", {
   render() {
-    const postType = select("core/editor").getCurrentPostType();
-    if ((postType !== "post") || (postType !== "page")) {
+    const postType = useSelect((select) => {
+      return select("core/editor").getCurrentPostType();
+    });
+    const is_page_or_post = ((postType === "post") || (postType === "page"));
+    if (!is_page_or_post) {
       return null;
     }
 
