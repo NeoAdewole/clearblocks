@@ -5,14 +5,19 @@ import { useSelect, useDispatch } from "@wordpress/data";
 import { PanelBody, TextControl, TextareaControl, ToggleControl, Button } from "@wordpress/components";
 import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 
+const { select } = wp.data;
 
 registerPlugin("ccb-sidebar", {
-  render(){
-    const { og_title, og_image, og_description, og_override_image } = useSelect((select)=> {
-      return select('core/editor').getEditedPostAttribute('meta');
-    });
+  render() {
+    const postType = select("core/editor").getCurrentPostType();
+    if ((postType !== "post") || (postType !== "page")) {
+      return null;
+    }
 
     const { editPost } = useDispatch("core/editor");
+    const { og_title, og_image, og_description, og_override_image } = useSelect((select) => {
+      return select('core/editor').getEditedPostAttribute('meta');
+    });
 
     return (
       <PluginSidebar
@@ -20,11 +25,11 @@ registerPlugin("ccb-sidebar", {
         icon="share"
         title={__("Clearblocks Sidebar", "cc-clearblocks")}
       >
-        <PanelBody title={__("Opengraph Options", "udemy-plus")}>
-          <TextControl 
-            label={__("Title", "udemy-plus")}
+        <PanelBody title={__("Opengraph Options", "cc-clearblocks")}>
+          <TextControl
+            label={__("Title", "cc-clearblocks")}
             value={og_title}
-            onChange={og_title => 
+            onChange={og_title =>
               editPost({
                 meta: {
                   og_title,
@@ -32,10 +37,10 @@ registerPlugin("ccb-sidebar", {
               })
             }
           />
-          <TextareaControl 
-            label={__("Description", "udemy-plus")}
+          <TextareaControl
+            label={__("Description", "cc-clearblocks")}
             value={og_description}
-            onChange={og_description => 
+            onChange={og_description =>
               editPost({
                 meta: {
                   og_description,
@@ -43,14 +48,14 @@ registerPlugin("ccb-sidebar", {
               })
             }
           />
-          <ToggleControl 
-            label={__("Override Featured Image", "udemy-plus")}
+          <ToggleControl
+            label={__("Override Featured Image", "cc-clearblocks")}
             checked={og_override_image}
             help={__(
-            "By default, the featured image will be used as the image. Check this option to use a different image.",
-            "udemy-plus"
+              "By default, the featured image will be used as the image. Check this option to use a different image.",
+              "cc-clearblocks"
             )}
-            onChange={og_override_image => 
+            onChange={og_override_image =>
               editPost({
                 meta: {
                   og_override_image,
@@ -58,23 +63,23 @@ registerPlugin("ccb-sidebar", {
               })
             }
           />
-          { og_override_image && 
+          {og_override_image &&
             <>
               <img src={og_image} />
               <MediaUploadCheck>
                 <MediaUpload
                   accept={["image"]}
-                  render={({ open })=> {
+                  render={({ open }) => {
                     return (
                       <Button variant="primary" onClick={open}>
                         {__("Change Image", "cc-clearblocks")}
                       </Button>
                     )
                   }}
-                  onSelect={(image)=> {
+                  onSelect={(image) => {
                     editPost({
                       meta: {
-                        og_image: image.sizes.openGraph.url,
+                        og_image: (image.sizes.openGraph ? image.sizes.openGraph.url : image.url),
                       },
                     });
                   }}

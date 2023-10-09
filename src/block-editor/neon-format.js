@@ -12,7 +12,6 @@ registerFormatType("clearblocks/neon", {
     const selectedBlock = useSelect(select => select('core/block-editor').getSelectedBlock());
     return (
       <>
-        {console.log(selectedBlock)}
         {selectedBlock?.name === "core/paragraph" &&
           <RichTextToolbarButton
             title={__("Neon", "cc-clearblocks")}
