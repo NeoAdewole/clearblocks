@@ -12225,17 +12225,19 @@ function SocialRating(props) {
 }
 document.addEventListener('DOMContentLoaded', event => {
   const block = document.querySelector('#social-rating');
-  const postID = parseInt(block.dataset.postId);
-  const avgRating = parseFloat(block.dataset.avgRating);
-  const loggedIn = !!block.dataset.loggedIn;
-  // The double negation operator !! converts a value into a boolean value
-  const ratingCount = !!parseInt(block.dataset.ratingCount);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SocialRating, {
-    postID: postID,
-    avgRating: avgRating,
-    loggedIn: loggedIn,
-    ratingCount: ratingCount
-  }), block);
+  if (block) {
+    const postID = parseInt(block.dataset.postId);
+    const avgRating = parseFloat(block.dataset.avgRating);
+    const loggedIn = !!block.dataset.loggedIn;
+    // The double negation operator !! converts a value into a boolean value
+    const ratingCount = !!parseInt(block.dataset.ratingCount);
+    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SocialRating, {
+      postID: postID,
+      avgRating: avgRating,
+      loggedIn: loggedIn,
+      ratingCount: ratingCount
+    }), block);
+  }
 });
 })();
 

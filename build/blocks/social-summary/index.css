@@ -14,7 +14,6 @@ div.wp-block-clearblocks-social-summary {
   padding-right: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: red;
 }
 
 .wp-block-clearblocks-social-summary .bi {
@@ -80,14 +79,6 @@ div.wp-block-clearblocks-social-summary {
 
 .wp-block-clearblocks-social-summary .components-spinner {
   margin: 0 auto;
-}
-
-.entry-content .wp-block-clearblocks-social-summary {
-  background-color: red;
-}
-.entry-content .wp-block-clearblocks-social-summary .bi {
-  font-family: bootstrap-icon;
-  color: red;
 }
 
 /*# sourceMappingURL=index.css.map*/
