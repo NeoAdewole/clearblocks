@@ -29,9 +29,6 @@ function ccb_register_assets()
 
   wp_register_style(
     'ccb_editor',
-    plugins_url('/build/block-editor/index.css', CCB_PLUGIN_FILE),
-    $editorAssets['dependencies'],
-    rand(111, 9999),
-    'all'
+    plugins_url('/build/block-editor/index.css', CCB_PLUGIN_FILE)
   );
 }
