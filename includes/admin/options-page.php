@@ -44,6 +44,7 @@ function ccb_plugin_options_page()
               <a href="#" class="button-primary" id="og-img-btn">
                 Select Image
               </a>
+              <p class="description">This image will also be used as a fallback for post thumbnails</p>
             </td>
           </tr>
           <!-- Open Graph Description -->
