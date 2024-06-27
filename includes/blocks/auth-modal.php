@@ -2,6 +2,9 @@
 
 function clearblocks_auth_modal_render_cb($atts)
 {
+  if (is_user_logged_in()) {
+    return '';
+  }
   $showRegister = $atts['showRegister'];
   ob_start();
 ?>
@@ -45,7 +48,7 @@ function clearblocks_auth_modal_render_cb($atts)
               <input type="text" id="si-email" placeholder="johndoe@example.com" />
 
               <label>Password</label>
-              <input type="password" id="si-password" />
+              <input type="password" id="si-password" autocomplete="on" />
 
               <button type="submit">Sign in</button>
             </fieldset>
@@ -64,7 +67,7 @@ function clearblocks_auth_modal_render_cb($atts)
                 <input type="email" id="su-email" placeholder="johndoe@example.com" />
 
                 <label for="su-password">Password</label>
-                <input type="password" id="su-password" />
+                <input type="password" id="su-password" autocomplete="on" />
 
                 <button type="submit">Sign up</button>
               </fieldset>

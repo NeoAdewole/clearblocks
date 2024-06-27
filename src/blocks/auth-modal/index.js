@@ -16,21 +16,21 @@ registerBlockType('clearblocks/auth-modal', {
     return (
       <>
         <InspectorControls>
-          <PanelBody title={ __('General', 'cc-clearblocks') }>
+          <PanelBody title={__('General', 'clearblocks')}>
             <ToggleControl
-              label={__('Show Register?', 'cc-clearblocks')}
+              label={__('Show Register?', 'clearblocks')}
               help={
-                showRegister?
-                __('Showing registeration form', 'cc-clearblocks') :
-                __('Hiding registeration form', 'cc-clearblocks') 
+                showRegister ?
+                  __('Showing registeration form', 'clearblocks') :
+                  __('Hiding registeration form', 'clearblocks')
               }
               checked={showRegister}
-              onChange={showRegister => setAttributes({showRegister})}
-            />            
+              onChange={showRegister => setAttributes({ showRegister })}
+            />
           </PanelBody>
         </InspectorControls>
-        <div { ...blockProps }>
-          {__('This block is not previewable from the editor. View your site for a live demo.', 'cc-clearblocks')}
+        <div {...blockProps}>
+          {__('This block is not previewable from the editor. View your site for a live demo.', 'clearblocks')}
         </div>
       </>
     );

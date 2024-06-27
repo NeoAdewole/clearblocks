@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "clearblocks/daily-social",
+  "version": "1",
+  "title": "Daily Social",
+  "category": "widgets",
+  "description": "Displays a random social post each day",
+  "keywords": [
+    "daily social post",
+    "clearblocks"
+  ],
+  "textdomain": "clearblocks",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Social of the Day"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css"
+}

@@ -4,14 +4,6 @@ class Clearblocks
 {
   // initialize class constants
 
-  public static $limit_notices = array(
-    10501 => 'FIRST_MONTH_OVER_LIMIT',
-    10502 => 'SECOND_MONTH_OVER_LIMIT',
-    10504 => 'THIRD_MONTH_APPROACHING_LIMIT',
-    10508 => 'THIRD_MONTH_OVER_LIMIT',
-    10516 => 'FOUR_PLUS_MONTHS_OVER_LIMIT',
-  );
-
   // initialize class variables
   private static $initiated = false;
 
@@ -22,7 +14,6 @@ class Clearblocks
     }
   }
 
-
   /**
    * Initializes WordPress hooks
    */
@@ -31,22 +22,68 @@ class Clearblocks
     self::$initiated = true;
   }
 
-  public static function view($name, array $args = array())
+  /**
+   * Activate Clearblocks plugin 
+   * Checks WP Version compatibility, Create Social Post Type, Creates social rating table.
+   */
+  public static function ccb_plugin_activation()
   {
-    $args = apply_filters('clearblocks_view_arguments', $args, $name);
+    if (version_compare($GLOBALS['wp_version'], CLEARBLOCKS__MINIMUM_WP_VERSION, '<')) {
+      load_plugin_textdomain('clearblocks');
 
-    foreach ($args as $key => $val) {
-      $$key = $val;
+      $message = '<strong>' . esc_html__(
+        sprintf(
+          'Clearblocks %1$f! requires WordPress %2$f or higher.',
+          CLEARBLOCKS_VERSION,
+          CLEARBLOCKS__MINIMUM_WP_VERSION
+        ),
+        'clearblocks'
+      ) . '</strong> ' . __(
+        sprintf(
+          "Please <a href='%s'>upgrade WordPress</a> to a current version to use this plugin.",
+          "https://codex.wordpress.org/Upgrading_WordPress"
+        ),
+        "clearblocks"
+      );
+
+      clearblocks::ccb_bail_on_activation($message);
+    } elseif (!empty($_SERVER['SCRIPT_NAME']) && false !== strpos($_SERVER['SCRIPT_NAME'], '/wp-admin/plugins.php')) {
+      add_option('Activated_Clearblocks', true);
     }
 
-    load_plugin_textdomain('clearblocks');
+    ccb_social_post_type();
+    flush_rewrite_rules();
 
-    $file = CLEARBLOCKS__PLUGIN_DIR . 'admin/views/' . $name . '.php';
+    global $wpdb;
+    $tableName = "{$wpdb->prefix}social_ratings";
+    $charsetCollate = $wpdb->get_charset_collate();
 
-    include($file);
+    $sql = "CREATE TABLE {$tableName} (
+      ID bigint(20) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      post_id bigint(20) unsigned NOT NULL,
+      user_id bigint(20) unsigned NOT NULL,
+      rating float(3,2) unsigned NOT NULL
+    ) ENGINE='InnoDB' {$charsetCollate};";
+
+    require_once(ABSPATH . "/wp-admin/includes/upgrade.php");
+    dbDelta($sql);
+
+    $options = get_option('clearblocks_options');
+
+    if (!$options) {
+      add_option('clearblocks_options', [
+        'og_title' => get_bloginfo('name'),
+        'og_img' => '',
+        'og_description' => get_bloginfo('description'),
+        'enable_og' => 1
+      ]);
+      add_option('clearblocks_secondary_menu', [
+        'ccb_enable_secondary_menu' => false
+      ]);
+    }
   }
 
-  private static function bail_on_activation($message, $deactivate = true)
+  public static function ccb_bail_on_activation($message, $deactivate = true)
   {
 ?>
     <!doctype html>
@@ -94,37 +131,11 @@ class Clearblocks
   }
 
   /**
-   * Attached to activate_{ plugin_basename( __FILES__ ) } by register_activation_hook()
-   * @static
-   */
-  public static function plugin_activation()
-  {
-    if (version_compare($GLOBALS['wp_version'], CLEARBLOCKS__MINIMUM_WP_VERSION, '<')) {
-      load_plugin_textdomain('clearblocks');
-
-      $message = '<strong>' . sprintf(
-        esc_html__('Clearblocks %s requires WordPress %s or higher.', 'clearblocks'),
-        CLEARBLOCKS_VERSION,
-        CLEARBLOCKS__MINIMUM_WP_VERSION
-      ) . '</strong> ' . sprintf(
-        __('Please <a href="%s">upgrade WordPress</a> to a current version to use this plugin.', 'clearblocks'),
-        'https://codex.wordpress.org/Upgrading_WordPress'
-      );
-
-      Clearblocks::bail_on_activation($message);
-    } elseif (!empty($_SERVER['SCRIPT_NAME']) && false !== strpos($_SERVER['SCRIPT_NAME'], '/wp-admin/plugins.php')) {
-      add_option('Activated_Clearblocks', true);
-    }
-  }
-
-  /**
    * Removes all connection options
    * @static
    */
-  public static function plugin_deactivation()
+  public static function ccb_plugin_deactivation()
   {
-    // self::deactivate_key(self::get_api_key());
-
     // Remove any scheduled cron jobs.
     $clearblocks_cron_events = array(
       'clearblocks_schedule_cron_recheck',
@@ -138,14 +149,5 @@ class Clearblocks
         wp_unschedule_event($timestamp, $clearblocks_cron_event);
       }
     }
-  }
-
-  public static function predefined_api_key()
-  {
-    if (defined('CLEARBLOCKS_API_KEY')) {
-      return true;
-    }
-
-    return apply_filters('clearblocks_predefined_api_key', false);
   }
 }

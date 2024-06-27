@@ -1,0 +1,860 @@
+# Copyright (C) 2023 ClearCut
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Clear Blocks Plugin 0.1.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/clearblocks\n"
+"Last-Translator: \n"
+"Language-Team: French (France)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-08-15T18:37:19+00:00\n"
+"PO-Revision-Date: 2023-08-18 00:35+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: clearblocks\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.3"
+
+#: admin/class.clearblocks-admin.php:106
+msgid "(undo)"
+msgstr ""
+
+#: includes/social-post-type.php:46
+msgid "A custom post type for social content"
+msgstr ""
+
+#: includes/admin/channel-fields.php:9 includes/admin/channel-fields.php:26
+msgid "A URL a user can click to learn more about this social post"
+msgstr ""
+
+#: includes/social-post-type.php:60
+msgid "A URL from more information on a channel"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:129
+msgid "Account"
+msgstr ""
+
+#: includes/social-post-type.php:10
+msgid "Add New"
+msgstr "Ajouter nouveau"
+
+#: includes/social-post-type.php:9
+msgctxt "Add New on Toolbar"
+msgid "Social"
+msgstr "Sociale"
+
+#: includes/social-post-type.php:11
+msgid "Add New Social"
+msgstr "Ajouter une nouvelle publication sociale"
+
+#: build/blocks/team-member/index.js:224 src/blocks/team-member/edit.js:152
+msgid "Add Social Media Handle"
+msgstr ""
+
+#: includes/social-post-type.php:8
+msgctxt "Admin Menu text"
+msgid "Socials"
+msgstr "Sociaux"
+
+#: includes/social-post-type.php:15
+msgid "All Socials"
+msgstr "Tous les messages sociaux"
+
+#: build/blocks/team-member/index.js:166 src/blocks/team-member/edit.js:88
+msgid "Alt Attribute"
+msgstr ""
+
+#: includes/admin/menus.php:15 includes/admin/menus.php:16
+msgid "Alt Clearblocks"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:119
+msgid "API Key"
+msgstr ""
+
+#: build/blocks/search-form/index.js:145 src/blocks/search-form/index.js:26
+#: build/blocks/search-form/index.js:64
+msgid "Background Color"
+msgstr ""
+
+#: build/blocks/team-members-group/block.json
+#: src/blocks/team-members-group/block.json
+msgctxt "block description"
+msgid "Adds a group for adding team members"
+msgstr ""
+
+#: build/blocks/header-tools/block.json src/blocks/header-tools/block.json
+msgctxt "block description"
+msgid "Adds a header toolbar that contains an authentication link"
+msgstr ""
+
+#: build/blocks/popular-socials/block.json
+#: src/blocks/popular-socials/block.json
+msgctxt "block description"
+msgid "Adds a list of highly rated socials"
+msgstr ""
+
+#: build/blocks/page-header/block.json src/blocks/page-header/block.json
+msgctxt "block description"
+msgid "Adds a page header"
+msgstr ""
+
+#: build/blocks/search-form/block.json src/blocks/search-form/block.json
+msgctxt "block description"
+msgid "Adds a search form"
+msgstr ""
+
+#: build/blocks/social-summary/block.json src/blocks/social-summary/block.json
+msgctxt "block description"
+msgid "Adds a summary section for a social post"
+msgstr ""
+
+#: build/blocks/team-member/block.json src/blocks/team-member/block.json
+msgctxt "block description"
+msgid "Adds a team member"
+msgstr "Ajouter un membre de l'équipe"
+
+#: build/blocks/auth-modal/block.json src/blocks/auth-modal/block.json
+msgctxt "block description"
+msgid "Adds an authentication modal"
+msgstr ""
+
+#: build/blocks/daily-social/block.json src/blocks/daily-social/block.json
+msgctxt "block description"
+msgid "Displays a random social post each day"
+msgstr ""
+
+#: build/blocks/boilerplate/block.json src/blocks/boilerplate/block.json
+msgctxt "block description"
+msgid "Example block scaffolded with Create Block tool."
+msgstr ""
+
+#: build/blocks/page-header/block.json src/blocks/page-header/block.json
+msgctxt "block keyword"
+msgid "Clear Blocks"
+msgstr ""
+
+#: build/blocks/daily-social/block.json build/blocks/search-form/block.json
+#: src/blocks/daily-social/block.json src/blocks/search-form/block.json
+msgctxt "block keyword"
+msgid "clearblocks"
+msgstr ""
+
+#: build/blocks/daily-social/block.json src/blocks/daily-social/block.json
+msgctxt "block keyword"
+msgid "daily social post"
+msgstr ""
+
+#: build/blocks/search-form/block.json src/blocks/search-form/block.json
+msgctxt "block keyword"
+msgid "search form"
+msgstr ""
+
+#: build/blocks/auth-modal/block.json src/blocks/auth-modal/block.json
+msgctxt "block title"
+msgid "Authentication Modal"
+msgstr ""
+
+#: build/blocks/boilerplate/block.json src/blocks/boilerplate/block.json
+msgctxt "block title"
+msgid "Clearcut Plugin Boilerplate"
+msgstr ""
+
+#: build/blocks/daily-social/block.json src/blocks/daily-social/block.json
+msgctxt "block title"
+msgid "Daily Social"
+msgstr "Social quotidien"
+
+#: build/blocks/header-tools/block.json src/blocks/header-tools/block.json
+msgctxt "block title"
+msgid "Header Tools"
+msgstr ""
+
+#: build/blocks/page-header/block.json src/blocks/page-header/block.json
+msgctxt "block title"
+msgid "Page Header"
+msgstr ""
+
+#: build/blocks/popular-socials/block.json
+#: src/blocks/popular-socials/block.json
+msgctxt "block title"
+msgid "Popular Socials"
+msgstr ""
+
+#: build/blocks/search-form/block.json src/blocks/search-form/block.json
+msgctxt "block title"
+msgid "Search Form"
+msgstr "Formulaire de recherche"
+
+#: build/blocks/social-summary/block.json src/blocks/social-summary/block.json
+msgctxt "block title"
+msgid "Social Summary"
+msgstr "Résumé social"
+
+#: build/blocks/team-member/block.json src/blocks/team-member/block.json
+msgctxt "block title"
+msgid "Team Member"
+msgstr "Membre de l'équipe"
+
+#: build/blocks/team-members-group/block.json
+#: src/blocks/team-members-group/block.json
+msgctxt "block title"
+msgid "Team Members Group"
+msgstr "Groupe de membres de l'équipe"
+
+#: admin/class.clearblocks-settings.php:211
+msgid "Blue"
+msgstr ""
+
+#: build/blocks/page-header/index.js:513 src/blocks/page-header/index.js:30
+msgid "Category: Some Category"
+msgstr ""
+
+#: includes/blocks/social-summary.php:68 includes/social-post-type.php:53
+#: build/blocks/social-summary/index.js:12720
+#: src/blocks/social-summary/index.js:87
+msgid "Channel"
+msgstr "Canal"
+
+#: admin/class.clearblocks-menu.php:28
+msgid "Channels"
+msgstr "Chaînes"
+
+#: admin/class.clearblocks-menu.php:121
+msgid ""
+"Choose to either discard the worst spam automatically or to always put all "
+"spam in spam folder."
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "Clear Blocks Plugin"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:11 includes/admin/menus.php:5
+#: includes/admin/menus.php:6
+msgid "Clearblocks"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:10
+msgid "Clearblocks Admin Page"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:107 admin/class.clearblocks-menu.php:118
+#: admin/class.clearblocks-menu.php:131
+msgid "Clearblocks Configuration"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:143
+msgid "Clearblocks FAQ"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:59 admin/class.clearblocks-menu.php:96
+#: admin/class.clearblocks-menu.php:108
+msgid ""
+"Clearblocks filters out spam, so you can focus on more important things."
+msgstr ""
+"Clearblocks filtre les spams, afin que vous puissiez vous concentrer sur des "
+"choses plus importantes."
+
+#: includes/admin/options-page.php:8 includes/admin/settings-api.php:9
+msgid "Clearblocks Settings"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:58 admin/class.clearblocks-menu.php:69
+#: admin/class.clearblocks-menu.php:80
+msgid "Clearblocks Setup"
+msgstr "Setui Clearblokcs"
+
+#: admin/class.clearblocks-menu.php:29
+msgid "Clearblocks Socials"
+msgstr "Réseaux sociaux Clearblokcs"
+
+#: admin/class.clearblocks-menu.php:95
+msgid "Clearblocks Stats"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:144
+msgid "Clearblocks Support"
+msgstr ""
+
+#. Author of the plugin
+msgid "ClearCut"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:84
+msgid "Click the Use this Key button."
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:212
+msgid "Coffee"
+msgstr ""
+
+#: build/blocks/search-form/index.js:143 src/blocks/search-form/index.js:23
+#: build/blocks/search-form/index.js:61
+msgid "Colors"
+msgstr ""
+
+#: build/blocks/team-members-group/index.js:508
+#: src/blocks/team-members-group/index.js:27
+msgid "Columns"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:120
+msgid "Comments"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:118
+msgid "Configure"
+msgstr ""
+
+#: includes/blocks/social-summary.php:49
+#: build/blocks/social-summary/index.js:12690
+#: src/blocks/social-summary/index.js:62
+msgid "Cook Time"
+msgstr ""
+
+#: build/blocks/social-summary/index.js:12698
+#: src/blocks/social-summary/index.js:68
+msgid "Cook time"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:83
+msgid "Copy and paste the API key into the text field."
+msgstr ""
+
+#: includes/blocks/social-summary.php:60
+#: build/blocks/social-summary/index.js:12707
+#: build/blocks/social-summary/index.js:12715
+#: src/blocks/social-summary/index.js:76 src/blocks/social-summary/index.js:82
+msgid "Course"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:103
+#: admin/class.clearblocks-settings.php:107
+msgid "Custom API Key"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:89
+msgid "Custom CSS for the Login screen"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:39
+msgid "Custom Footer"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:43
+msgid "Custom footer text"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:94
+msgid "Custom Message"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:57
+msgid "Custom Scheme"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:85
+msgid "Custom Style"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:98
+msgid "Custom text and/or markup"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:76
+msgid "Custom Title"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:80
+msgid "Custom title attribute for the logo link"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:48
+msgid "Custom Toolbar"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:67
+msgid "Custom URL"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:71
+msgid "Custom URL for the channels logo link"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:21
+msgid "Customize Admin Area"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:27
+msgid "Customize Social Channels Page"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:116
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:209
+msgid "Default"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:61
+msgid "Default color scheme for new users"
+msgstr ""
+
+#: build/blocks/team-member/index.js:171 src/blocks/team-member/edit.js:91
+msgid "Description of your image for screen readers."
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:142
+msgid "Disable custom styles"
+msgstr ""
+
+#: build/blocks/page-header/index.js:510 src/blocks/page-header/index.js:22
+msgid "Displaying Category"
+msgstr ""
+
+#: build/blocks/page-header/index.js:510 src/blocks/page-header/index.js:22
+msgid "Displaying Custom Header"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:213
+msgid "Ectoplasm"
+msgstr ""
+
+#: includes/social-post-type.php:13
+msgid "Edit Social"
+msgstr "Modifier la publication sociale"
+
+#: admin/class.clearblocks-settings.php:141
+msgid "Enable custom styles"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:78
+msgid "Enter an API Key"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:119
+msgid "Enter/remove an API key."
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:142
+msgid "For more information:"
+msgstr ""
+
+#: build/blocks/auth-modal/index.js:503 build/blocks/header-tools/index.js:503
+#: build/blocks/page-header/index.js:503 src/blocks/auth-modal/index.js:19
+#: src/blocks/header-tools/index.js:20 src/blocks/page-header/index.js:17
+msgid "General"
+msgstr ""
+
+#: build/blocks/team-members-group/index.js:519
+#: src/blocks/team-members-group/index.js:37
+msgid "Hexagon"
+msgstr ""
+
+#: build/blocks/header-tools/index.js:519 src/blocks/header-tools/index.js:35
+msgid "Hiding Link"
+msgstr ""
+
+#: build/blocks/auth-modal/index.js:506 src/blocks/auth-modal/index.js:25
+msgid "Hiding registeration form"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://clearcutcomms.ca"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://clearcutcomms.ca/clearblocks"
+msgstr ""
+
+#: build/blocks/team-member/index.js:256 src/blocks/team-member/edit.js:185
+msgid "Icon"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:81
+msgid "If you already have an API key"
+msgstr ""
+
+#: build/blocks/team-members-group/index.js:516
+#: src/blocks/team-members-group/index.js:34
+msgid "Image Shape"
+msgstr "Forme de l'image"
+
+#: admin/class.clearblocks-settings.php:210
+msgid "Light"
+msgstr ""
+
+#: build/blocks/team-member/index.js:203 src/blocks/team-member/edit.js:129
+msgid "Member bio"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:214
+msgid "Midnight"
+msgstr ""
+
+#: includes/admin/channel-fields.php:7 includes/admin/channel-fields.php:22
+msgid "More Info URL"
+msgstr ""
+
+#: clear-blocks-plugin.php:85
+msgid "My custom message"
+msgstr ""
+
+#: build/blocks/team-member/index.js:187 src/blocks/team-member/edit.js:114
+msgid "Name"
+msgstr ""
+
+#: includes/social-post-type.php:12
+msgid "New Social"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:67
+msgid "New to Clearblocks"
+msgstr ""
+
+#: build/blocks/header-tools/index.js:508 src/blocks/header-tools/index.js:25
+msgid "No"
+msgstr ""
+
+#: includes/social-post-type.php:19
+msgid "No socials found in Trash."
+msgstr ""
+
+#: includes/social-post-type.php:18
+msgid "No socials found."
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:215
+msgid "Ocean"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:60
+msgid "On this page, you are able to set up the Clearblocks plugin."
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:109
+msgid ""
+"On this page, you are able to update your Clearblocks settings and view spam "
+"stats."
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:97
+msgid "On this page, you are able to view stats on spam filtered on your site."
+msgstr ""
+
+#: includes/admin/options-page.php:63 includes/image-sizes.php:7
+msgid "Open Graph"
+msgstr ""
+
+#: includes/admin/options-page.php:53 includes/admin/settings-api.php:30
+msgid "Open Graph Description"
+msgstr ""
+
+#: includes/admin/settings-api.php:37
+msgid "Open Graph Enable"
+msgstr ""
+
+#: includes/admin/options-page.php:38 includes/admin/settings-api.php:23
+msgid "Open Graph Image"
+msgstr ""
+
+#: includes/admin/options-page.php:27 includes/admin/settings-api.php:16
+msgid "Open Graph Title"
+msgstr ""
+
+#: includes/admin/options-page.php:13
+msgid "Options updated successfully"
+msgstr ""
+
+#: includes/social-post-type.php:20
+msgctxt ""
+"Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Social Cover Image"
+msgstr ""
+
+#: includes/social-post-type.php:25
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into social"
+msgstr ""
+
+#: includes/social-post-type.php:22
+msgctxt ""
+"Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
+msgid "Remove cover image"
+msgstr ""
+
+#: includes/social-post-type.php:21
+msgctxt ""
+"Overrides the “Set featured image” phrase for this post type. Added in 4.3"
+msgid "Set cover image"
+msgstr ""
+
+#: includes/social-post-type.php:26
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this social"
+msgstr ""
+
+#: includes/social-post-type.php:23
+msgctxt ""
+"Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
+msgid "Use as cover image"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:56 admin/class.clearblocks-menu.php:93
+#: admin/class.clearblocks-menu.php:105
+msgid "Overview"
+msgstr ""
+
+#: includes/social-post-type.php:17
+msgid "Parent Socials:"
+msgstr ""
+
+#: build/blocks/team-members-group/index.js:525
+#: src/blocks/team-members-group/index.js:39
+msgid "Pentagon"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Plugin featuring a collection of blocks to improve the WordPress user "
+"experience provided by Clear Cut"
+msgstr ""
+
+#: includes/social-post-type.php:6
+msgctxt "Post type general name"
+msgid "Socials"
+msgstr "Sociaux"
+
+#: includes/social-post-type.php:7
+msgctxt "Post type singular name"
+msgid "Social"
+msgstr "Social"
+
+#: includes/blocks/social-summary.php:41
+#: build/blocks/social-summary/index.js:12677
+#: src/blocks/social-summary/index.js:51
+msgid "Prep Time"
+msgstr ""
+
+#: build/blocks/social-summary/index.js:12685
+#: src/blocks/social-summary/index.js:57
+msgid "Prep time"
+msgstr ""
+
+#: build/blocks/team-members-group/index.js:522
+#: src/blocks/team-members-group/index.js:38
+msgid "Rabbet"
+msgstr ""
+
+#: includes/blocks/social-summary.php:78
+#: build/blocks/social-summary/index.js:12733
+#: src/blocks/social-summary/index.js:110
+msgid "Rating"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:107
+msgid "Re-adding..."
+msgstr ""
+
+#: build/blocks/team-member/index.js:279 src/blocks/team-member/edit.js:203
+msgid "Remove"
+msgstr ""
+
+#: build/blocks/team-member/index.js:163 src/blocks/team-member/edit.js:79
+msgid "Remove Image"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:52
+msgid "Remove new post and comment links from the Toolbar"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:103
+msgid "Remove this URL"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:104
+msgid "Removing..."
+msgstr ""
+
+#: build/blocks/team-member/index.js:146 src/blocks/team-member/edit.js:59
+msgid "Replace Image"
+msgstr ""
+
+#: includes/social-post-type.php:27
+msgctxt ""
+"Screen reader text for the filter links heading on the post type listing "
+"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter socials list"
+msgstr ""
+
+#: includes/social-post-type.php:29
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Socials list"
+msgstr ""
+
+#: includes/social-post-type.php:28
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Socials list navigation"
+msgstr ""
+
+#: includes/blocks/search-form.php:12 includes/blocks/search-form.php:16
+#: includes/blocks/search-form.php:18
+msgid "Search"
+msgstr ""
+
+#: includes/social-post-type.php:16
+msgid "Search Socials"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:77
+#: build/blocks/popular-socials/index.js:539
+#: build/blocks/team-member/index.js:164
+#: build/blocks/team-members-group/index.js:506
+#: src/blocks/popular-socials/index.js:49 src/blocks/team-member/edit.js:84
+#: src/blocks/team-members-group/index.js:25
+msgid "Settings"
+msgstr ""
+
+#: build/blocks/page-header/index.js:505 src/blocks/page-header/index.js:19
+msgid "Show Category"
+msgstr ""
+
+#: build/blocks/header-tools/index.js:505
+#: build/blocks/header-tools/index.js:518 src/blocks/header-tools/index.js:22
+#: src/blocks/header-tools/index.js:31
+msgid "Show Login/Register Link"
+msgstr ""
+
+#: build/blocks/auth-modal/index.js:505 src/blocks/auth-modal/index.js:21
+msgid "Show Register?"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:120
+msgid ""
+"Show the number of approved comments beside each comment author in the "
+"comments list page."
+msgstr ""
+
+#: build/blocks/header-tools/index.js:519 src/blocks/header-tools/index.js:34
+msgid "Showing Link"
+msgstr ""
+
+#: build/blocks/auth-modal/index.js:506 src/blocks/auth-modal/index.js:24
+msgid "Showing registeration form"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:119
+msgid "Socials"
+msgstr "sociaux"
+
+#: clear-blocks-plugin.php:86
+msgid "Special message for users"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:133
+msgid "Status"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:121
+msgid "Strictness"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:132
+msgid "Subscription Type"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:216
+msgid "Sunrise"
+msgstr ""
+
+#: includes/image-sizes.php:6
+msgid "Team Member"
+msgstr "Membre de l'équipe"
+
+#: build/blocks/search-form/index.js:151 src/blocks/search-form/index.js:31
+#: build/blocks/search-form/index.js:69
+msgid "Text Color"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:132
+msgid "The Clearblocks subscription plan"
+msgstr ""
+
+#: includes/social-post-type.php:24
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Social archives"
+msgstr ""
+
+#: includes/social-post-type.php:68
+msgid "The rating for a social post"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:133
+msgid "The subscription status - active, cancelled or suspended"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:114
+msgid "These settings enable you to configure the Clearblocks settings"
+msgstr ""
+
+#: admin/class.clearblocks-settings.php:120
+msgid "These settings enable you to customize the Clearblocks Channels"
+msgstr ""
+
+#: build/blocks/auth-modal/index.js:511 src/blocks/auth-modal/index.js:33
+msgid ""
+"This block is not previewable from the editor. View your site for a live "
+"demo."
+msgstr ""
+
+#: build/blocks/daily-social/index.js:537
+#: build/blocks/popular-socials/index.js:571
+#: build/blocks/team-member/index.js:194 src/blocks/daily-social/index.js:43
+#: src/blocks/popular-socials/index.js:84 src/blocks/team-member/edit.js:120
+msgid "Title"
+msgstr ""
+
+#: build/blocks/team-member/index.js:242 src/blocks/team-member/edit.js:173
+msgid "URL"
+msgstr ""
+
+#: admin/class.clearblocks-admin.php:105
+msgid "URL removed"
+msgstr ""
+
+#: includes/social-post-type.php:14
+msgid "View Social"
+msgstr ""
+
+#: clear-blocks-plugin.php:83
+msgid "What's your DBD'ers scale?"
+msgstr ""
+
+#: build/blocks/header-tools/index.js:511 src/blocks/header-tools/index.js:26
+msgid "Yes"
+msgstr ""
+
+#: includes/admin/save-options.php:7
+msgid "You are not allowed to be on this page"
+msgstr ""
+
+#: admin/class.clearblocks-menu.php:70
+msgid ""
+"You need to enter an API key to activate the Clearblocks service on your "
+"site."
+msgstr ""
